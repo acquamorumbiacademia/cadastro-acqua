@@ -1,0 +1,565 @@
+@media (min-width: 360px){
+
+#close{
+
+font-size: 35pt !important;
+
+}
+
+.alignclose{
+
+margin: 0rem 75.5% !important;
+}
+
+#msgerror{
+
+font-size: 13pt;
+
+}
+
+#logo {
+
+width: 8rem !important;
+margin-top: 2rem !important;
+
+}
+
+#title1 {
+
+font-size: 35pt !important;
+margin-top: 0.5rem !important;
+line-height: 1.1 !important;
+
+}
+
+#boxforms {
+
+padding: 0.5rem !important;
+border-radius: 3.5rem !important;
+margin-top: 1rem !important;
+
+}
+
+#title2{
+
+font-size: 25pt !important;
+margin-top: 3rem !important;
+
+}
+
+#title3{
+
+font-size: 15pt !important;
+margin-left: 2rem !important;
+margin-right: 2rem !important;
+
+}
+
+
+.titleforms{
+
+margin-top: 0.5rem !important;
+font-size: 16pt !important;
+}
+
+.inputstyle{
+
+height: 4.5rem !important;
+padding-left: 1.5rem !important;
+padding-right: 1.5rem !important;
+font-size: 14pt !important;
+}
+
+.dropstyle{
+
+background-position: 93% center !important;
+height: 4.5rem !important;
+padding-left: 1.5rem !important;
+padding-right: 1.5rem !important;
+font-size: 14pt;
+}
+
+#searchcep{
+
+padding-right: 1rem !important;
+font-size: 13pt !important;
+
+}
+
+#colunas{
+
+flex-direction: column !important;
+margin-bottom: 1.5rem !important;
+}
+
+.inputendereco{
+
+width: 100% !important;
+height: 4.5rem !important;
+padding-left: 1.5rem !important;
+padding-right: 1.5rem !important;
+font-size: 14pt !important;
+}
+
+#buttoncep{
+
+padding-right: 1rem !important;
+width: 1.8rem;
+
+}
+
+.space{
+
+width: 0 !important;
+display: none !important;
+}
+
+.divisao{
+
+width: 100% !important;
+
+}
+
+.titleendereco{
+
+margin-top: 0.5rem !important;
+font-size: 16pt !important;
+}
+
+#enviar{
+
+font-size: 20pt !important;
+margin-top: 2rem !important;
+margin-bottom: 3rem !important;
+width: 85% !important;
+height: 3.5rem !important;
+
+}
+
+#rodape{
+
+margin-top: 3rem !important;
+
+}
+
+#favicon{
+
+width: 5rem !important;
+}
+
+#bodytext{
+
+font-size: 12pt !important;
+margin-left: 5rem !important;
+margin-right: 5rem !important;
+text-align: justify !important;
+}
+
+#sign{
+
+margin-left: 2rem !important;
+margin-right: 2rem !important;
+margin-top: 2rem !important;
+margin-bottom: 3rem !important;
+
+}
+
+}
+
+@media (min-width: 480px){
+
+.modal-content{
+
+width: 60%;
+}
+
+#msgerror{
+
+font-size: 14pt;
+
+}
+
+.alignclose{
+
+margin: 0rem 79% !important;
+
+}
+
+#logo {
+
+width: 10rem !important;
+margin-top: 3rem !important;
+
+}
+
+#title1 {
+
+font-size: 45pt !important;
+margin-top: 0.5rem !important;
+line-height: 1.1 !important;
+margin-right: 3rem !important;
+margin-left: 3rem !important;
+
+}
+
+#boxforms {
+
+width: 93%;
+padding: 0rem !important;
+border-radius: 3.5rem !important;
+margin-top: 1rem !important;
+
+}
+
+#title2{
+
+font-size: 35pt !important;
+margin-top: 4rem !important;
+
+}
+
+#title3{
+
+font-size: 18pt !important;
+margin-left: 4rem !important;
+margin-right: 4rem !important;
+
+}
+
+
+.titleforms{
+
+margin-top: 1rem !important;
+font-size: 20pt !important;
+}
+
+.inputstyle{
+
+height: 5.5rem !important;
+padding-left: 1.5rem !important;
+padding-right: 1.5rem !important;
+font-size: 17pt !important;
+
+}
+
+#searchcep{
+
+font-size: 14pt !important;
+padding-right: 2rem !important;
+
+}
+
+#colunas{
+
+flex-direction: column !important;
+margin-bottom: 2rem !important;
+}
+
+.inputendereco{
+
+width: 100% !important;
+height: 5.5rem !important;
+padding-left: 1.5rem !important;
+padding-right: 1.5rem !important;
+font-size: 17pt !important;
+}
+
+#buttoncep{
+
+padding: 1.8rem !important;
+width: 2.5rem !important;
+
+}
+
+.space{
+
+width: 0 !important;
+display: none !important;
+}
+
+.divisao{
+
+width: 100% !important;
+
+}
+
+.titleendereco{
+
+margin-top: 0.5rem !important;
+font-size: 20pt !important;
+}
+
+.dropstyle{
+
+background-position: 93% center !important;
+height: 5.5rem !important;
+padding-left: 1.5rem !important;
+padding-right: 1.5rem !important;
+font-size: 17pt !important;
+background-size: 2.3rem !important;
+}
+
+#enviar{
+
+margin-top: 2.5rem !important;
+margin-bottom: 6rem !important;
+width: 89% !important;
+height: 4.5rem !important;
+
+}
+
+#rodape{
+
+margin-top: 5rem !important;
+
+}
+
+#favicon{
+
+width: 8rem !important;
+margin-top: 2.5rem !important;
+
+}
+
+#bodytext{
+
+font-size: 15pt !important;
+margin-left: 2rem !important;
+margin-right: 2rem !important;
+text-align: justify !important;
+}
+
+#sign{
+font-size: 20pt !important;
+margin-left: 2.5rem !important;
+margin-right: 2.5rem !important;
+margin-top: 2rem !important;
+margin-bottom: 5rem !important;
+
+}
+
+}
+
+@media (min-width: 768px){
+
+.modal-content{
+
+    width: 70% !important;
+    padding-top: 7rem !important;
+    padding-bottom: 6rem !important;
+}
+
+#title4{
+
+    font-size: 35pt !important;
+    margin: 5vh 12% !important;
+    margin-bottom: 0.5rem !important;
+}
+
+#msgerror{
+
+    font-size: 30pt;
+
+}
+
+#close{
+
+    font-size: 90pt !important;
+}
+
+.alignclose{
+
+    margin: -1rem 77% !important;
+
+}
+
+.progress-bar{
+
+    width: 75% !important;
+    margin-top: 1.5rem !important;
+}
+
+#logo {
+
+    width: 15rem !important;
+    margin-top: 5rem !important;
+
+}
+
+#title1 {
+
+    font-size: 75pt !important;
+    margin-top: 0.5rem !important;
+    line-height: 1.1 !important;
+    margin-right: 4rem !important;
+    margin-left: 4rem !important;
+
+}
+
+#boxforms {
+    
+    width: 95%;
+    padding: 0rem !important;
+    border-radius: 4.5rem !important;
+    margin-top: 3rem !important;
+    
+}
+
+#title2{
+
+    font-size: 60pt !important;
+    margin-top: 7rem !important;
+
+}
+
+#title3{
+
+    font-size: 35pt !important;
+    margin-left: 6rem !important;
+    margin-right: 6rem !important;
+    margin-top: 1.5rem !important;
+
+}
+
+
+.titleforms{
+
+    margin-top: 1.5rem !important;
+    font-size: 32pt !important;
+}
+
+.inputstyle{
+
+    height: 8.5rem !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    font-size: 30pt !important;
+    border: solid 0.25rem #00b3f6 !important;
+    
+}
+
+.inputstyle:focus {
+
+    outline: none;
+    border: solid 0.25rem #004aad;
+    
+    }
+
+#searchcep{
+    
+    font-size: 25pt !important;
+    padding-right: 2rem !important;
+
+}
+
+.titleendereco{
+
+    margin-top: 1.5rem !important;
+    font-size: 35pt !important;
+}
+
+#colunas{
+
+    flex-direction: column !important;
+    margin-bottom: 3rem !important;
+}
+
+
+.inputendereco{
+
+    width: 100% !important;
+    height: 8.5rem !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    font-size: 30pt !important;
+    border: solid 0.25rem #00b3f6 !important;
+}
+
+.inputendereco:focus{
+
+    outline: none;
+    border: solid 0.25rem #004aad
+
+}
+
+#buttoncep{
+
+    padding: 3rem !important;
+    width: 3.5rem !important;
+    
+}
+
+.space{
+
+    width: 0 !important;
+    display: none !important;
+}
+
+.divisao{
+
+    width: 100% !important;
+
+}
+
+.dropstyle{
+
+    background-position: 93% center !important;
+    height: 8.5rem !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    font-size: 30pt !important;
+    background-size: 3.5rem !important;
+    background-position: 92% center !important;
+    border: solid 0.25rem #00b3f6 !important;
+
+}
+
+.dropstyle:focus {
+    
+    color: black;
+    outline: none;
+    border: solid 0.25rem #004aad;
+    background-image: url('imagens/seta.png');
+}
+
+#enviar{
+
+    margin-top: 4rem !important;
+    margin-bottom: 10rem !important;
+    width: 89% !important;
+    height: 8rem !important;
+    font-size: 40pt !important;
+
+}
+
+#rodape{
+
+    margin-top: 8rem !important;
+
+}
+
+#favicon{
+
+    width: 12rem !important;
+    margin-top: 2.5rem !important;
+
+}
+
+#bodytext{
+
+    font-size: 25pt !important;
+    margin-left: 3rem !important;
+    margin-right: 3rem !important;
+    text-align: justify !important;
+}
+
+#sign{
+    font-size: 32pt !important;
+    margin-left: 3rem !important;
+    margin-right: 3rem !important;
+    margin-top: 3rem !important;
+    margin-bottom: 8rem !important;
+
+}
+
+}

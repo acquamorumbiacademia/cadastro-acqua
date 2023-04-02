@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imagens/favicon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
+    <title>Bem-vindo(a) à Acqua</title>
+</head>
+<body>
+
+<div id="modal">
+    <div id="title4">NOTIFICAÇÃO:</div>
+    <div class="alignclose">
+        <span id="close">&times;</span></div>
+    <div class="modal-content">
+        <p id="msgerror">Erro de validação.</p>
+    </div>
+    <div id="areaprogess">
+    <progress class="progress-bar" value="0" id="progress-bar" max="100"></progress>
+    </div>
+</div>
+
+<!--Start Header-->
+<div id="header">
+<img id="logo" src="imagens/logo.png" alt="Logotipo Acqua Morumbi Academia.">
+<div id="title1">BEM-VINDO À ACQUA!</div>
+</div>
+<!--Header End-->
+
+<!--Start Forms-->
+<div id="center">
+
+<div id="boxforms">
+
+<div id="title2">Cadastre-se</div>
+<div id="title3">Preencha este formulário com suas informações:</div>
+
+<div class="centerbox">
+<div class="centerleft">
+
+<!--Start Nome Completo-->
+<div class="titleforms">Nome completo:</div>
+<input id="nomecompleto" type="text" class="inputstyle" placeholder="Ex: Nome e sobrenome">
+<!--Nome Completo End-->
+
+<!--Start Data de nascimento-->
+<div class="titleforms">Data de nascimento:</div>
+<input id="birthday" class="inputstyle" placeholder="Ex: 26/08/2018">
+<!--Data de nascimento End-->
+
+
+<!--Start Como conheceu-->
+<div class="titleforms">Gênero:</div>
+<select class="dropstyle" id="genero">
+    <option value="" selected disabled hidden>Selecione uma opção...</option>
+    <option value="Feminino">Feminino</option>
+    <option value="Masculino">Masculino</option>
+    <option value="Prefiro não dizer">Prefiro não dizer</option>
+    </select>
+
+<!--Como conheceu End-->
+
+<!--Start CPF-->
+<div class="titleforms">CPF:</div>
+<input id="cpf" class="inputstyle" placeholder="Ex: 123.456.789-10">
+<!--CPF End-->
+
+<!--Start RG-->
+<div class="titleforms">RG:</div>
+<input id="rg" class="inputstyle" placeholder="Ex: 12.345.678-9">
+<!--RG End-->
+
+<!--Start CEP-->
+<div id="titlecep">
+<div class="titleforms">CEP:</div>
+<a href="https://buscacepinter.correios.com.br/app/endereco/index.php" id="searchcep">Não sabe seu CEP?</a>
+</div>
+<div id="campocep">
+<img id="buttoncep" onmouseover="trocarLupa(this)" onmouseout="voltarLupa(this)" src="imagens/lupa-azul.png" alt="Icone de busca de endereço.">
+<input id="cep" class="inputstyle buttoncep" placeholder="Ex: 12.345.678-9">
+</div>
+<!--CEP End-->
+
+<!--Start Endereço-->
+<div class="titleforms">Endereço:</div>
+<input id="endereco" class="inputstyle" placeholder="Ex: Rua Franco Alfano">
+<!--Endereço End-->
+
+<div id="colunas">
+
+<div class="divisao">
+<!--Start Número-->
+<div class="titleendereco">Número:</div>
+<input id="numero" class="inputendereco" placeholder="Ex: 942">
+</div>
+
+<div id="space"></div>
+<!--Start Complemento-->
+<div class="divisao">
+<div class="titleendereco">Complemento:</div>
+<input id="complemento" class="inputendereco" placeholder="Ex: Apt 1 Bloco 2">
+</div>
+</div>
+
+<!--Start Email-->
+<div class="titleforms">E-mail:</div>
+<input id="email" class="inputstyle" placeholder="Ex: acqua@acqua.com.br">
+<!--Email End-->
+
+<!--Start Telefone Residencial-->
+<div class="titleforms">Telefone residencial:</div>
+<input id="residencial" class="inputstyle" placeholder="Ex: 1135897177">
+<!--Telefone Residencial End-->
+
+<!--Start Telefone Celular-->
+<div class="titleforms">Telefone celular:</div>
+<input id="celular" class="inputstyle" placeholder="Ex: 11935897177">
+<!--Telefone Celular End-->
+
+<!--Start Como conheceu-->
+<div class="titleforms">Como conheceu:</div>
+<select class="dropstyle" id="comoconheceu">
+    <option value="" selected disabled hidden>Selecione uma opção...</option>
+    <option value="Google">Google</option>
+    <option value="Instagram">Instagram</option>
+    <option value="Facebook">Facebook</option>
+    <option value="Linkedin">Linkedin</option>
+    <option value="Youtube">Youtube</option>
+    <option value="Fachada">Passei na frente</option>
+    <option value="Indicação">Indicação de um amigo(a)</option>
+    </select>
+<!--Como conheceu End-->
+</div>
+
+<button id="enviar">Cadastrar</button>
+</div>
+</div>
+<!--Forms End-->
+
+<!--Start Rodapé-->
+<div id="rodape">
+
+<img id="favicon" src="imagens/favicon.png" alt="Favicon Acqua Morumbi Academia.">    
+<div id="bodytext">Ao se cadastrar nesse formulário, você concorda 
+    automaticamente com os termos e condições de uso de dados da Acqua 
+    Morumbi Academia. Fique tranquilo(a), seus dados estarão seguros 
+    conosco. A Acqua Morumbi Academia não compartilha suas informações 
+    com terceiros, possui banco de dados seguros e segue as políticas 
+    de uso de dados, privacidade e coockies recomendadas pela LGPD
+    (Lei Geral de Proteção de Dados). A qualquer momento que quiser é 
+    possível reivindicar o envio de nossas comunicações gerais. Para 
+    maiores informações sobre à política de privacidade da Acqua 
+    <a class="link" href="https://drive.google.com/file/d/1kF16qb5jlCvh_25I2TBVrbPX4ER5tqOv/view?usp=share_link">
+        clique aqui</a> ou entre em contato conosco utilizando o 
+        endereço de email: <a href="mailto:suporte@acquamorumbiacademia.com.br" class="link">
+            suporte@acquamorumbiacademia.com.br</a>.</div>
+<div id="sign">© Todos os direitos reservados à Acqua Morumbi Academia</div>
+
+</div>
+
+<!--Rodapé End-->
+
+<script defer src="script.js"></script>
+</body>
+</html>
+

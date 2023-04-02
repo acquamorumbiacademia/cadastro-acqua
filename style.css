@@ -1,0 +1,535 @@
+html, body {
+    height: auto;
+    margin: 0;
+  }
+
+body{
+
+    background-image: linear-gradient(to top, #00b3f6, #004aad);
+    font-family: Nunito, sans-serif;
+    width: 100%;
+    
+}
+
+#modal {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.650);
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    pointer-events: none; /* Desativa eventos do mouse enquanto o modal está escondido */
+    transform: scale(0);
+    display: none; 
+    
+  }
+  
+#modal.show {
+z-index: 200;
+opacity: 1;
+pointer-events: auto; /* Ativa eventos do mouse enquanto o modal está visível */
+display: block; /* Mostra o modal quando a classe "show" é adicionada */
+transform: scale(1);
+}
+
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.940);
+    padding: 3rem;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    padding-right: 2.5rem;
+    width: 50%;
+    height: auto;
+    border-radius: 1.5rem;
+    position: relative;
+    margin: 0rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#close {
+    color: #004aad;
+    float: right;
+    font-size: 45pt;
+    font-family: Nunito, sans-serif;
+    position: fixed;
+    justify-content: right;
+    align-items: center;
+    z-index: 200;
+    font-weight: 900;
+    padding: 0rem;
+    margin: 0rem auto;
+}
+
+#close:hover,
+#close:focus {
+    color: #00b3f6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#msgerror{
+
+    font-size: 14pt;
+    font-family: Nunito, sans-serif;
+    color: red;
+    display: flex;
+    margin: 0rem;
+    margin-left: 5%;
+    margin-bottom: 0rem;
+    text-align: left;
+    line-height: 1.1;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0rem;
+    font-weight: 500;
+    margin-right: 5%;
+    padding: 0.2rem;
+
+}
+
+#title4{
+
+    font-family: Nunito, sans-serif;
+    font-size: 16pt;
+    text-align: left;
+    padding: 0rem;
+    padding-bottom: 0rem;
+    padding-left: 0rem;
+    margin: 5vh 15%;
+    margin-bottom: 0.2rem;
+    color: #00b3f6;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+
+}
+
+.alignclose {
+    position: fixed;
+    justify-content: right;
+    align-items: center;
+    margin: 0rem 72.5%;
+    margin-right: 0rem;
+    z-index: 1;
+}
+
+.progress-bar {
+    position: absolute;
+    width: 70%;
+    height: 2.5rem;
+    margin-top: 1rem;
+    background-color: white;
+    border-radius: 99.9rem;
+    overflow: hidden;
+    left: 50%; /* Define o ponto central horizontal da tela */
+    transform: translateX(-50%);
+    border: solid 0.10rem transparent;
+    
+}
+
+.progress-bar::-webkit-progress-bar {
+    background-color: transparent;
+    
+}
+
+.progress-bar::-webkit-progress-value {
+    background-image: linear-gradient(to right, #004aad, #00b3f6);
+    border-radius: 99.9rem;
+    transition: width 0.1s ease;
+    
+}
+
+.progress-bar::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background-image: linear-gradient(to right, #4f4f4f, #00b3f6);
+    border-radius: 99.9rem;
+    transition: all 1s  ease-in-out;
+    
+}
+
+.progress-bar[data-percentage="100"]::before {
+    width: 100;
+}
+
+
+#areaprogress{
+    
+    position: relative;
+}
+
+#progress-bar.show {
+    display: block;
+}
+
+#header{
+
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#logo{
+
+    width: 8rem;
+    height: auto;
+    margin-top: 2rem;
+
+}
+
+#title1{
+
+    font-family: Nunito, sans-serif;
+    font-size: 30pt;
+    color: white;
+    text-align: center;
+    margin: 1rem;
+    margin-top: 0rem;
+    line-height: 1;
+    font-weight: 900;
+
+}
+
+#center{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.centerbox{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;     
+    align-items: center;  
+
+}
+
+#boxforms{
+    height: auto;
+    width: 85%;
+    background-color: white;
+    border-radius: 3rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0.2rem;
+    padding-left: 0.2rem;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    margin-bottom: 0rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem 0rem rgba(0, 0, 0, 0.400);
+
+}
+
+#title2{
+
+    font-family: Nunito, sans-serif;
+    font-size: 25pt;
+    color: #00b3f6;
+    line-height: 0.7;
+    margin-top: 2rem;
+    font-weight: 900;
+    text-align: center;
+
+
+}
+
+#title3 {
+    
+    font-family: Nunito, sans-serif;
+    font-size: 14pt;
+    color: #004aad;
+    text-decoration: underline 1px;
+    margin-bottom: 1rem;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 0.6rem;
+    
+
+}
+
+.centerleft{
+
+    width: 100%;
+    height: auto;
+    
+
+}
+
+.titleforms {
+
+    font-family: Nunito, sans-serif;
+    font-size: 14pt;
+    justify-content: left;
+    margin-left: 0.8rem;
+    color: black;
+    margin-top: 1rem;
+    font-weight: 800;
+    
+
+}
+
+.inputstyle{
+
+    width: 100%;
+    height: 4.5rem;
+    border: solid 0.15rem #00b3f6;
+    border-radius: 99.9rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: Nunito, sans-serif;
+    color: black;
+    font-size: 13pt;
+    box-sizing: border-box;
+    font-weight: 500;
+    padding-bottom: 0rem;
+    
+   
+}
+
+.inputstyle:focus {
+
+outline: none;
+border: solid 0.15rem #004aad;
+
+}
+
+.dropstyle{
+
+    width: 100%;
+    height: 4.5rem;
+    border: solid 0.15rem #00b3f6;
+    border-radius: 99.9rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: Nunito, sans-serif;
+    color: gray;
+    font-size: 12pt;
+    appearance: none;
+    background-image: url('imagens/seta-azul.png');
+    background-size: 1.8rem;
+    background-repeat: no-repeat;
+    background-position: 92% center;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: 500;
+    background-color: white;
+    padding-bottom: 0rem;
+
+}
+
+.dropstyle:focus {
+    
+    color: black;
+    outline: none;
+    border: solid 0.15rem #004aad;
+    background-image: url('imagens/seta.png');
+}
+
+#titlecep{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 1.5rem;
+    
+}
+
+#searchcep{
+
+    color: #004aad;
+    padding-right: 1rem;
+    line-height: 1.6;
+    font-size: 11pt;
+
+}
+
+#campocep{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+
+}
+
+#buttoncep{
+
+    width: 1.7rem;
+    z-index: 0;
+    display: block;
+    position: absolute;
+    padding-right: 6%;
+    padding-top: 0.1rem;
+    
+    
+}
+
+#buttoncep:hover{
+
+    cursor: pointer;
+}
+
+#colunas{
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+    
+
+
+}
+
+.titleendereco{
+
+    font-family: Nunito, sans-serif;
+    font-size: 12pt;
+    justify-content: left;
+    margin-left: 0.8rem;
+    color: black;
+    margin-top: 1rem;
+    font-weight: 800;
+
+
+}
+
+#space{
+
+    width: 10%;
+}
+
+.divisao{
+
+    width: 45%;
+}
+
+.inputendereco{
+
+    width: 100%;
+    height: 3.5rem;
+    border: solid 0.15rem #00b3f6;
+    border-radius: 99.9rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: Nunito, sans-serif;
+    color: black;
+    font-size: 12pt;
+    box-sizing: border-box;
+    font-weight: 500;
+    padding-bottom: 0rem;
+   
+}
+
+.inputendereco:focus {
+
+outline: none;
+border: solid 0.15rem #004aad;
+
+}
+
+#enviar{
+    width: 100%;
+    height: 3.5rem;
+    font-family: Nunito, sans-serif;
+    font-size: 20pt;
+    color: white;
+    background-image: linear-gradient(to right, #00b3f6, #004aad);
+    border: 0rem;
+    border-radius: 99.9rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    font-weight: 900;
+
+}
+
+#enviar:hover{
+
+    background-image: linear-gradient(to right, #00b3f6, #47A896);
+
+}
+
+#rodape{
+
+    width: 100%;
+    height: auto;
+    background-color: white;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#favicon{
+
+    width: 30%;
+    height: auto;
+    margin-top: 1rem;
+
+}
+
+#bodytext{
+
+    font-family: Nunito, sans-serif;
+    text-align: justify;
+    font-size: 11pt;
+    line-height: 1.2;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-weight: 500;
+    
+}
+
+.link{
+
+    color: #004aad;
+    text-decoration: underline;
+
+}
+
+#sign{
+
+    font-family: Nunito, sans-serif;
+    color: #004aad;
+    font-size: 15pt;
+    margin: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 5rem;
+    line-height: 1;
+    text-align: center;
+    font-weight: 800;
+
+}
+
+
+
+
+
+
