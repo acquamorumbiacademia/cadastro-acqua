@@ -33,6 +33,7 @@ opacity: 1;
 pointer-events: auto; /* Ativa eventos do mouse enquanto o modal está visível */
 display: block; /* Mostra o modal quando a classe "show" é adicionada */
 transform: scale(1);
+position: fixed;
 }
 
 
