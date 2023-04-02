@@ -46,29 +46,29 @@
 
 <!--Start Nome Completo-->
 <div class="titleforms">Nome completo:</div>
-<input id="nomecompleto" type="text" class="inputstyle" placeholder="Ex: Nome e sobrenome">
+<input id="nomecompleto" type="text" pattern="\*d" class="inputstyle" placeholder="Ex: Nome e sobrenome">
 <!--Nome Completo End-->
 
 <!--Start Data de nascimento-->
 <div class="titleforms">Data de nascimento:</div>
-<input type="number" id="birthday" class="inputstyle" placeholder="Ex: 26/08/2018">
+<input type="text" pattern="\*d"  id="birthday" class="inputstyle" placeholder="Ex: 26/08/2018">
 <!--Data de nascimento End-->
 
 
 <!--Start Como conheceu-->
 <div class="titleforms">Gênero:</div>
-<select class="dropstyle disabled-option" id="genero">
-    <option value="" selected disabled hidden>Selecione uma opção...</option>
-    <option value="Feminino">Feminino</option>
-    <option value="Masculino">Masculino</option>
-    <option value="Prefiro não dizer">Prefiro não dizer</option>
+<select class="dropstyle" id="genero">
+    <option class="disabled-option" value="" selected disabled hidden>Selecione uma opção...</option>
+    <option class="disabled-option" value="Feminino">Feminino</option>
+    <option class="disabled-option" value="Masculino">Masculino</option>
+    <option class="disabled-option" value="Prefiro não dizer">Prefiro não dizer</option>
     </select>
 
 <!--Como conheceu End-->
 
 <!--Start CPF-->
 <div class="titleforms">CPF:</div>
-<input id="cpf" type="number" class="inputstyle" placeholder="Ex: 123.456.789-10">
+<input id="cpf" type="text" pattern="\*d" class="inputstyle" placeholder="Ex: 123.456.789-10">
 <!--CPF End-->
 
 <!--Start RG-->
@@ -83,7 +83,7 @@
 </div>
 <div id="campocep">
 <img id="buttoncep" onmouseover="trocarLupa(this)" onmouseout="voltarLupa(this)" src="imagens/lupa-azul.png" alt="Icone de busca de endereço.">
-<input id="cep" type="number" class="inputstyle buttoncep" placeholder="Ex: 12.345.678-9">
+<input id="cep" type="text" pattern="\*d" class="inputstyle buttoncep" placeholder="Ex: 12.345.678-9">
 </div>
 <!--CEP End-->
 
@@ -97,7 +97,7 @@
 <div class="divisao">
 <!--Start Número-->
 <div class="titleendereco">Número:</div>
-<input type="number" id="numero" class="inputendereco" placeholder="Ex: 942">
+<input type="text" pattern="\*d" id="numero" class="inputendereco" placeholder="Ex: 942">
 </div>
 
 <div id="space"></div>
@@ -115,25 +115,25 @@
 
 <!--Start Telefone Residencial-->
 <div class="titleforms">Telefone residencial:</div>
-<input type="number" id="residencial" class="inputstyle" placeholder="Ex: 1135897177">
+<input type="text" pattern="\*d" id="residencial" class="inputstyle" placeholder="Ex: 1135897177">
 <!--Telefone Residencial End-->
 
 <!--Start Telefone Celular-->
 <div class="titleforms">Telefone celular:</div>
-<input id="celular" type="number" class="inputstyle" placeholder="Ex: 11935897177">
+<input id="celular" type="text" pattern="\*d" class="inputstyle" placeholder="Ex: 11935897177">
 <!--Telefone Celular End-->
 
 <!--Start Como conheceu-->
 <div class="titleforms">Como conheceu:</div>
 <select class="dropstyle disabled-option" id="comoconheceu">
-    <option value="" selected disabled hidden>Selecione uma opção...</option>
-    <option value="Google">Google</option>
-    <option value="Instagram">Instagram</option>
-    <option value="Facebook">Facebook</option>
-    <option value="Linkedin">Linkedin</option>
-    <option value="Youtube">Youtube</option>
-    <option value="Fachada">Passei na frente</option>
-    <option value="Indicação">Indicação de um amigo(a)</option>
+    <option class="disabled-option" value="" selected disabled hidden>Selecione uma opção...</option>
+    <option class="disabled-option" value="Google">Google</option>
+    <option class="disabled-option" value="Instagram">Instagram</option>
+    <option class="disabled-option" value="Facebook">Facebook</option>
+    <option class="disabled-option" value="Linkedin">Linkedin</option>
+    <option class="disabled-option" value="Youtube">Youtube</option>
+    <option class="disabled-option" value="Fachada">Passei na frente</option>
+    <option class="disabled-option" value="Indicação">Indicação de um amigo(a)</option>
     </select>
 <!--Como conheceu End-->
 </div>

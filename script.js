@@ -41,7 +41,12 @@ nascimentoInput.addEventListener('input', function() {
   this.value = nascimento;
 });
 
-cpfInput.addEventListener("input", (event) => {
+cpfInput.addEventListener('keydown', function(event) {
+  // Verifica se a tecla pressionada é o "Backspace" ou "Delete"
+  if (event.key === "Backspace" || event.key === "Delete") {
+    return; // Não aplica a máscara
+  }
+
   let cpf = event.target.value;
   
   // Remove tudo que não for número
@@ -56,7 +61,12 @@ cpfInput.addEventListener("input", (event) => {
   event.target.value = cpf;
 });
 
-rgInput.addEventListener('input', function() {
+rgInput.addEventListener('keydown', function(event) {
+  // Verifica se a tecla pressionada é o "Backspace" ou "Delete"
+  if (event.key === "Backspace" || event.key === "Delete") {
+    return; // Não aplica a máscara
+  }
+  
   let rg = this.value.replace(/[^\w]/g, '');
   if (rg.length > 1) {
     rg = rg.substring(0, 2) + '.' + rg.substring(2);
@@ -64,13 +74,18 @@ rgInput.addEventListener('input', function() {
   if (rg.length > 6) {
     rg = rg.substring(0, 6) + '.' + rg.substring(6);
   }
-  if (rg.length > 10) {
+  if (rg.length > 9) {
     rg = rg.substring(0, 10) + '-' + rg.substring(10);
   }
   this.value = rg;
 });
 
-cepInput.addEventListener('input', function() {
+cepInput.addEventListener('keydown', function(event) {
+  // Verifica se a tecla pressionada é o "Backspace" ou "Delete"
+  if (event.key === "Backspace" || event.key === "Delete") {
+    return; // Não aplica a máscara
+  }
+
   let cep = this.value.replace(/\D/g, '');
   if (cep.length > 5) {
     cep = cep.substring(0, 5) + '-' + cep.substring(5);
@@ -78,7 +93,12 @@ cepInput.addEventListener('input', function() {
   this.value = cep;
 });
 
-residencialInput.addEventListener('input', function() {
+residencialInput.addEventListener('keydown', function(event) {
+  // Verifica se a tecla pressionada é o "Backspace" ou "Delete"
+  if (event.key === "Backspace" || event.key === "Delete") {
+    return; // Não aplica a máscara
+  }
+
   let residencial = this.value.replace(/\D/g, '');
   if (residencial.length > 2) {
     residencial = residencial.substring(0, 2) + " " + residencial.substring(2);
@@ -86,7 +106,12 @@ residencialInput.addEventListener('input', function() {
   this.value = residencial;
 });
 
-celularInput.addEventListener('input', function() {
+celularInput.addEventListener('keydown', function(event) {
+  // Verifica se a tecla pressionada é o "Backspace" ou "Delete"
+  if (event.key === "Backspace" || event.key === "Delete") {
+    return; // Não aplica a máscara
+  }
+
   let celular = this.value.replace(/\D/g, '');
   if (celular.length > 2) {
     celular = celular.substring(0, 2) + " " + celular.substring(2);
@@ -164,7 +189,7 @@ function validarCampo(campo) {
         drop.setAttribute('disabled', true);
       });
       disabledOptions.forEach(option => {
-        option.hidden = true;
+        option.style.display = 'none';
       });
     }, 100);
     // Define o tempo de espera antes de começar a carregar a barra de progresso
@@ -249,7 +274,7 @@ function resetProgress() {
     drop.removeAttribute('disabled');
   });
   disabledOptions.forEach(option => {
-    option.hidden = false;
+    option.style.display = 'block';
   });
 }
 
