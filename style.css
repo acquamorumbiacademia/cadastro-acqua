@@ -23,17 +23,21 @@ body{
     transition: opacity 2s ease-in-out;
     pointer-events: none; /* Desativa eventos do mouse enquanto o modal está escondido */
     transform: scale(0);
-    display: none; 
+    
+    
     
   }
   
 #modal.show {
+    
 z-index: 200;
 opacity: 1;
 pointer-events: auto; /* Ativa eventos do mouse enquanto o modal está visível */
 display: block; /* Mostra o modal quando a classe "show" é adicionada */
 transform: scale(1);
 position: fixed;
+overflow: hidden;
+
 }
 
 
