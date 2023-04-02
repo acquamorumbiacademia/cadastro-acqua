@@ -20,16 +20,18 @@ body{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.650);
     opacity: 0;
-    transition: opacity 2s ease-in-out;
+    transition: opacity 1s ease-in-out;
     pointer-events: none; /* Desativa eventos do mouse enquanto o modal está escondido */
     transform: scale(0);
+    padding-bottom: 50rem;
+    overflow: hidden;
     
     
     
   }
   
 #modal.show {
-    
+
 z-index: 200;
 opacity: 1;
 pointer-events: auto; /* Ativa eventos do mouse enquanto o modal está visível */
