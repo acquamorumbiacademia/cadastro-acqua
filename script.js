@@ -9,6 +9,7 @@ const residencialInput = document.getElementById('residencial');
 const celularInput = document.getElementById('celular');
 const closeBtn = document.getElementById("close");
 const drops = document.querySelectorAll('.dropstyle')
+const disabledOptions = document.querySelectorAll('.disabled-option');
 const mensagensErro = {
   nomecompleto: "Por favor, insira um nome completo válido, contendo sempre o primeiro caracterer maiúsculo.",
   birthday: "Por favor, insira uma data de nascimento válida no formato dd/mm/aaaa.<br><br>Ex: 20/08/2018.",
@@ -162,6 +163,9 @@ function validarCampo(campo) {
       drops.forEach(drop => {
         drop.setAttribute('disabled', true);
       });
+      disabledOptions.forEach(option => {
+        option.hidden = true;
+      });
     }, 100);
     // Define o tempo de espera antes de começar a carregar a barra de progresso
   // Define o tempo de espera antes de começar a carregar a barra de progresso
@@ -243,6 +247,9 @@ function resetProgress() {
   progressBar.classList.remove('show');
   drops.forEach(drop => {
     drop.removeAttribute('disabled');
+  });
+  disabledOptions.forEach(option => {
+    option.hidden = false;
   });
 }
 

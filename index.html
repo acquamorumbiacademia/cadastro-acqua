@@ -51,13 +51,13 @@
 
 <!--Start Data de nascimento-->
 <div class="titleforms">Data de nascimento:</div>
-<input id="birthday" class="inputstyle" placeholder="Ex: 26/08/2018">
+<input type="number" id="birthday" class="inputstyle" placeholder="Ex: 26/08/2018">
 <!--Data de nascimento End-->
 
 
 <!--Start Como conheceu-->
 <div class="titleforms">Gênero:</div>
-<select class="dropstyle" id="genero">
+<select class="dropstyle disabled-option" id="genero">
     <option value="" selected disabled hidden>Selecione uma opção...</option>
     <option value="Feminino">Feminino</option>
     <option value="Masculino">Masculino</option>
@@ -68,7 +68,7 @@
 
 <!--Start CPF-->
 <div class="titleforms">CPF:</div>
-<input id="cpf" class="inputstyle" placeholder="Ex: 123.456.789-10">
+<input id="cpf" type="number" class="inputstyle" placeholder="Ex: 123.456.789-10">
 <!--CPF End-->
 
 <!--Start RG-->
@@ -83,7 +83,7 @@
 </div>
 <div id="campocep">
 <img id="buttoncep" onmouseover="trocarLupa(this)" onmouseout="voltarLupa(this)" src="imagens/lupa-azul.png" alt="Icone de busca de endereço.">
-<input id="cep" class="inputstyle buttoncep" placeholder="Ex: 12.345.678-9">
+<input id="cep" type="number" class="inputstyle buttoncep" placeholder="Ex: 12.345.678-9">
 </div>
 <!--CEP End-->
 
@@ -97,7 +97,7 @@
 <div class="divisao">
 <!--Start Número-->
 <div class="titleendereco">Número:</div>
-<input id="numero" class="inputendereco" placeholder="Ex: 942">
+<input type="number" id="numero" class="inputendereco" placeholder="Ex: 942">
 </div>
 
 <div id="space"></div>
@@ -115,17 +115,17 @@
 
 <!--Start Telefone Residencial-->
 <div class="titleforms">Telefone residencial:</div>
-<input id="residencial" class="inputstyle" placeholder="Ex: 1135897177">
+<input type="number" id="residencial" class="inputstyle" placeholder="Ex: 1135897177">
 <!--Telefone Residencial End-->
 
 <!--Start Telefone Celular-->
 <div class="titleforms">Telefone celular:</div>
-<input id="celular" class="inputstyle" placeholder="Ex: 11935897177">
+<input id="celular" type="number" class="inputstyle" placeholder="Ex: 11935897177">
 <!--Telefone Celular End-->
 
 <!--Start Como conheceu-->
 <div class="titleforms">Como conheceu:</div>
-<select class="dropstyle" id="comoconheceu">
+<select class="dropstyle disabled-option" id="comoconheceu">
     <option value="" selected disabled hidden>Selecione uma opção...</option>
     <option value="Google">Google</option>
     <option value="Instagram">Instagram</option>
