@@ -205,6 +205,7 @@ function validarCampo(campo) {
     campo.style.border = "0.15rem solid #00b3f6";
     document.getElementById("modal").classList.remove('show');
   } else {
+    document.body.focus();
     campo.style.border = "0.15rem solid red";
     document.getElementById("msgerror").innerHTML = mensagensErro[campo.id];
     // Exibe o modal
@@ -310,24 +311,4 @@ closeBtn.addEventListener("click", () => {
   resetProgress();
   // Limpa o timeout anterior, se existir
   clearTimeout(timeoutId);
-});
-
-const modal = document.querySelector('#modal');
-const modalContent = modal.querySelector('.modal-content');
-const newTop = Math.max(0, modalTop + (currentHeight - modalBottom - keyboardHeight));
-let previousHeight = window.innerHeight;
-
-window.addEventListener('focusin', function() {
-  const currentHeight = window.innerHeight;
-  const keyboardHeight = previousHeight - currentHeight;
-  const modalBottom = modalTop + modalContent.offsetHeight;
-
-  if (keyboardHeight > 0 && modalBottom > currentHeight - keyboardHeight) {
-    const newTop = Math.max(0, modalTop - (modalBottom - currentHeight + keyboardHeight));
-    modal.style.top = `${newTop}px`;
-  } else {
-    modal.style.top = '';
-  }
-
-  previousHeight = currentHeight;
 });
