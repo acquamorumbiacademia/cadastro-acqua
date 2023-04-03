@@ -218,6 +218,7 @@ function validarCampo(campo) {
     campo.style.border = `${border}rem solid red`;
     campo.disabled = true; 
     document.getElementById("msgerror").innerHTML = mensagensErro[campo.id];
+    window.scrollTo(0, 0);
     // Exibe o modal
     setTimeout(() => {
       // Exibe o modal
