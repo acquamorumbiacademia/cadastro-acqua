@@ -211,7 +211,6 @@ function validarCampo(campo) {
     setTimeout(() => {
       // Exibe o modal
       document.getElementById("modal").classList.add('show');
-      campo.blur();
       drops.forEach(drop => {
         drop.setAttribute('disabled', true);
       });
