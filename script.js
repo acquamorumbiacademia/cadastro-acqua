@@ -22,6 +22,17 @@ const mensagensErro = {
   celular: "Por favor, insira um número de celular válido e com DDD.<br><br>Ex: 11935897177."
 };
 
+function exibirLarguraTela() {
+  let largura = window.innerWidth;
+  document.getElementById("resolucao").textContent = `Largura: ${largura}px`;
+}
+
+// Executar a função no carregamento da página
+exibirLarguraTela();
+
+// Executar a função quando a janela for redimensionada
+window.addEventListener("resize", exibirLarguraTela);
+
 inputFields.forEach((inputField) => {
   inputField.addEventListener("blur", () => {
     validarCampo(inputField);
