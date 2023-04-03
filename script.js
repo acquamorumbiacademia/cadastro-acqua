@@ -8,10 +8,8 @@ const nascimentoInput = document.getElementById('birthday');
 const residencialInput = document.getElementById('residencial');
 const celularInput = document.getElementById('celular');
 const closeBtn = document.getElementById("close");
-const disabledOptions = document.querySelectorAll('.disabled-option');
 const bordaStyle = document.querySelectorAll('.inputstyle, .inputendereco')
 const modal = document.getElementById("modal");
-const elementsToDisable = document.querySelectorAll('input, select, textarea, button');
 const hidden = document.getElementById("hidden")
 const mensagensErro = {
   nomecompleto: "Por favor, insira um nome completo válido, contendo sempre o primeiro caracterer maiúsculo.",
@@ -24,27 +22,16 @@ const mensagensErro = {
   celular: "Por favor, insira um número de celular válido e com DDD.<br><br>Ex: 11935897177."
 };
 
-function scrollToModal() {
-  // Define o valor de deslocamento para o topo do modal
-  const topOffset = modal.getBoundingClientRect().top + window.scrollY;
+// function exibirLarguraTela() {
+//   let largura = window.innerWidth;
+//   document.getElementById("resolucao").textContent = `Largura: ${largura}px`;
+// }
 
-  // Rola a página suavemente até o início do modal
-  modal.scrollIntoView({ behavior: 'smooth' });
+// // Executar a função no carregamento da página
+// exibirLarguraTela();
 
-  // Subtrai a altura do cabeçalho do navegador
-  window.scrollTo(0, topOffset - 100);
-}
-
-function exibirLarguraTela() {
-  let largura = window.innerWidth;
-  document.getElementById("resolucao").textContent = `Largura: ${largura}px`;
-}
-
-// Executar a função no carregamento da página
-exibirLarguraTela();
-
-// Executar a função quando a janela for redimensionada
-window.addEventListener("resize", exibirLarguraTela);
+// // Executar a função quando a janela for redimensionada
+// window.addEventListener("resize", exibirLarguraTela);
 
   let borda;
 
@@ -229,12 +216,8 @@ function validarCampo(campo) {
     document.getElementById("modal").classList.remove('show');
   } else {
     campo.style.border = `${border}rem solid red`;
-    elementsToDisable.forEach(element => {
-      element.disabled = true;
-    });
-    inputFields.disabled = true; 
+    campo.disabled = true;
     document.getElementById("msgerror").innerHTML = mensagensErro[campo.id];
-    scrollToModal()
     // Exibe o modal
     setTimeout(() => {
       // Exibe o modal
@@ -276,11 +259,10 @@ function validarCampo(campo) {
   }, intervalTime);
   // Adiciona a classe 'show' à barra de progresso para exibi-la
   progressBar.classList.add('show');
-}, 100); 
+}, 0); 
   }
 
 }
-
 
 buttonLupa.addEventListener("click", () => {
   const cep = cepInput.value.replace(/\D/g, "");
@@ -322,16 +304,15 @@ function resetProgress() {
   progressBar.value = 0;
   progressBar.classList.remove('show');
  
-  elementsToDisable.forEach(element => {
-    element.disabled = false;
-    if (element != "") {
-      element.value = ""
+  inputFields.forEach(inputField => {
+    if (inputField && inputField.disabled) {
+      inputField.style.border = `{borda}rem solid red`
+      inputField.value = ""
+      inputField.disabled = false;
     }
-
   });
   
 }
-
 
 closeBtn.addEventListener("click", () => {
   document.getElementById("modal").classList.remove('show');
