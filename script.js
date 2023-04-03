@@ -8,10 +8,10 @@ const nascimentoInput = document.getElementById('birthday');
 const residencialInput = document.getElementById('residencial');
 const celularInput = document.getElementById('celular');
 const closeBtn = document.getElementById("close");
-const drops = document.querySelectorAll('.dropstyle')
 const disabledOptions = document.querySelectorAll('.disabled-option');
 const bordaStyle = document.querySelectorAll('.inputstyle, .inputendereco')
 const modal = document.getElementById("modal");
+const elementsToDisable = document.querySelectorAll('input, select, textarea, button');
 const mensagensErro = {
   nomecompleto: "Por favor, insira um nome completo válido, contendo sempre o primeiro caracterer maiúsculo.",
   birthday: "Por favor, insira uma data de nascimento válida no formato dd/mm/aaaa.<br><br>Ex: 20/08/2018.",
@@ -228,20 +228,18 @@ function validarCampo(campo) {
     document.getElementById("modal").classList.remove('show');
   } else {
     campo.style.border = `${border}rem solid red`;
-    campo.disabled = true; 
+    campo.disabled = true;
+    campo.setAttribute('disabled', true)
+    elementsToDisable.forEach(element => {
+      element.disabled = true;
+    });
+    inputFields.disabled = true; 
     document.getElementById("msgerror").innerHTML = mensagensErro[campo.id];
     scrollToModal()
     // Exibe o modal
     setTimeout(() => {
       // Exibe o modal
       document.getElementById("modal").classList.add('show');
-      drops.forEach(drop => {
-        drop.setAttribute('disabled', true);
-        drop.disabled = true;
-      });
-      disabledOptions.forEach(option => {
-        option.style.display = 'none';
-      });
     }, 100);
 
     // Define o tempo de espera antes de começar a carregar a barra de progresso
@@ -322,26 +320,9 @@ function resetProgress() {
   const progressBar = document.getElementById("progress-bar");
   progressBar.value = 0;
   progressBar.classList.remove('show');
-  drops.forEach(drop => {
-    drop.removeAttribute('disabled');
-  });
-  disabledOptions.forEach(option => {
-    option.style.display = 'block';
-  });
  
-  inputFields.forEach(inputField => {
-    if (inputField && inputField.disabled) {
-      inputField.disabled = false;
-      const selectElement = inputField.previousElementSibling;
-      if (selectElement && selectElement.tagName === "SELECT") {
-        selectElement.disabled = false;
-      }
-      inputField.style.border = `${borda}rem solid red`;
-      inputField.value = "";
-    }
-    if (inputField.value === "") {
-      inputField.style.border = `${borda}rem solid #00b3f6`;
-    }
+  elementsToDisable.forEach(element => {
+    element.disabled = false;
   });
   
 }
