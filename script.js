@@ -11,6 +11,7 @@ const closeBtn = document.getElementById("close");
 const drops = document.querySelectorAll('.dropstyle')
 const disabledOptions = document.querySelectorAll('.disabled-option');
 const bordaStyle = document.querySelectorAll('.inputstyle, .inputendereco')
+const modal = document.getElementById("modal");
 const mensagensErro = {
   nomecompleto: "Por favor, insira um nome completo válido, contendo sempre o primeiro caracterer maiúsculo.",
   birthday: "Por favor, insira uma data de nascimento válida no formato dd/mm/aaaa.<br><br>Ex: 20/08/2018.",
@@ -21,6 +22,17 @@ const mensagensErro = {
   residencial: "Por favor, insira um número de telefone residencial válido e com DDD.<br><br>Ex: 1135897177.",
   celular: "Por favor, insira um número de celular válido e com DDD.<br><br>Ex: 11935897177."
 };
+
+function scrollToModal() {
+  // Define o valor de deslocamento para o topo do modal
+  const topOffset = modal.getBoundingClientRect().top + window.scrollY;
+
+  // Rola a página suavemente até o início do modal
+  modal.scrollIntoView({ behavior: 'smooth' });
+
+  // Subtrai a altura do cabeçalho do navegador
+  window.scrollTo(0, topOffset - 100);
+}
 
 function exibirLarguraTela() {
   let largura = window.innerWidth;
@@ -48,6 +60,10 @@ window.addEventListener("resize", exibirLarguraTela);
 inputFields.forEach((inputField) => {
   inputField.addEventListener("blur", () => {
     validarCampo(inputField);
+  if (inputField != "") {
+
+
+  }
   });
 
 bordaStyle.forEach((element) => {
@@ -218,7 +234,7 @@ function validarCampo(campo) {
     campo.style.border = `${border}rem solid red`;
     campo.disabled = true; 
     document.getElementById("msgerror").innerHTML = mensagensErro[campo.id];
-    window.scrollTo(0, 0);
+    scrollToModal()
     // Exibe o modal
     setTimeout(() => {
       // Exibe o modal
