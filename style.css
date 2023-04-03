@@ -181,6 +181,28 @@ overflow: hidden;
     display: block;
 }
 
+/* regra para navegadores que não suportam seletores de pseudo-elemento */
+.progress-bar:before {
+    /* ... */
+    width: 0;
+    background-image: linear-gradient(to right, #4f4f4f, #00b3f6);
+    border-radius: 99.9rem;
+    transition: all 1s  ease-in-out;
+}
+
+/* regra para navegadores que não suportam pseudo-elementos */
+.no-progress-bar::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background-image: linear-gradient(to right, #4f4f4f, #00b3f6);
+    border-radius: 99.9rem;
+    transition: all 1s  ease-in-out;
+}
+
 #header{
 
     width: auto;
