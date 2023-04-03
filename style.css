@@ -16,8 +16,7 @@ body{
     color: white;
     font-size: 16pt;
     font-weight: 900;
-    margin-top: 2;
-
+    margin: 2;
 }
 
 #modal {
@@ -32,8 +31,9 @@ body{
     transition: opacity 0.2s ease-in-out;
     pointer-events: none; /* Desativa eventos do mouse enquanto o modal está escondido */
     transform: scale(0);
-    padding-bottom: 0rem;
     overflow: hidden;
+    
+    
     
   }
   
@@ -214,7 +214,7 @@ overflow: hidden;
     text-align: center;
     margin: 1rem;
     margin-top: 0rem;
-    line-height: 1.1;
+    line-height: 1;
     font-weight: 900;
 
 }
@@ -328,7 +328,7 @@ overflow: hidden;
 .inputstyle:focus {
 
 outline: none;
-border: solid 0.15rem #004aad !important;
+border: solid 0.15rem #004aad;
 
 }
 

@@ -444,14 +444,14 @@ margin-bottom: 5rem !important;
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
     font-size: 30pt !important;
-    border: solid 0.25rem #00b3f6 !important;
+    border: solid 0.25rem #00b3f6;
     
 }
 
 .inputstyle:focus {
 
     outline: none;
-    border: solid 0.25rem #004aad;
+    border: solid 0.25rem #004aad !important;
     
     }
 
@@ -482,13 +482,13 @@ margin-bottom: 5rem !important;
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
     font-size: 30pt !important;
-    border: solid 0.25rem #00b3f6 !important;
+    border: solid 0.25rem #00b3f6;
 }
 
 .inputendereco:focus{
 
     outline: none;
-    border: solid 0.25rem #004aad
+    border: solid 0.25rem #004aad;
 
 }
 
@@ -520,7 +520,7 @@ margin-bottom: 5rem !important;
     font-size: 30pt !important;
     background-size: 3.5rem !important;
     background-position: 92% center !important;
-    border: solid 0.25rem #00b3f6 !important;
+    border: solid 0.25rem #00b3f6;
 
 }
 
@@ -670,7 +670,7 @@ margin-bottom: 5rem !important;
         padding-left: 2.5rem !important;
         padding-right: 2.5rem !important;
         font-size: 35pt !important;
-        border: solid 0.32rem #00b3f6 !important;
+        border: solid 0.32rem #00b3f6;
         
     }
     
@@ -708,13 +708,13 @@ margin-bottom: 5rem !important;
         padding-left: 2.5rem !important;
         padding-right: 2.5rem !important;
         font-size: 35pt !important;
-        border: solid 0.32rem #00b3f6 !important;
+        border: solid 0.32rem #00b3f6;
     }
     
     .inputendereco:focus{
     
         outline: none;
-        border: solid 0.32rem #004aad
+        border: solid 0.32rem #004aad;
     
     }
     
@@ -746,7 +746,7 @@ margin-bottom: 5rem !important;
         font-size: 35pt !important;
         background-size: 4.5rem !important;
         background-position: 92% center !important;
-        border: solid 0.32rem #00b3f6 !important;
+        border: solid 0.32rem #00b3f6;
     
     }
     
@@ -838,7 +838,7 @@ margin-bottom: 5rem !important;
             width: 63% !important;
             margin-top: 1rem !important;
             height: 2.5rem !important;
-            border: solid 0.15rem transparent;
+            border: solid 0.15rem transparent !important;
         }
         
         #logo {
@@ -898,7 +898,7 @@ margin-bottom: 5rem !important;
             padding-left: 2rem !important;
             padding-right: 2rem !important;
             font-size: 16pt !important;
-            border: solid 0.18rem #00b3f6 !important;
+            border: solid 0.18rem #00b3f6;
             
         }
         
@@ -937,13 +937,13 @@ margin-bottom: 5rem !important;
             padding-left: 2rem !important;
             padding-right: 2rem !important;
             font-size: 16pt !important;
-            border: solid 0.18rem #00b3f6 !important;
+            border: solid 0.18rem #00b3f6;
         }
         
         .inputendereco:focus{
         
             outline: none;
-            border: solid 0.18rem #004aad
+            border: solid 0.18rem #004aad;
         
         }
         
@@ -973,7 +973,7 @@ margin-bottom: 5rem !important;
             font-size: 16pt !important;
             background-size: 2rem !important;
             background-position: right 4% center !important;
-            border: solid 0.18rem #00b3f6 !important;
+            border: solid 0.18rem #00b3f6;
         
         }
         

@@ -10,7 +10,7 @@ const celularInput = document.getElementById('celular');
 const closeBtn = document.getElementById("close");
 const drops = document.querySelectorAll('.dropstyle')
 const disabledOptions = document.querySelectorAll('.disabled-option');
-const bordaStyle = document.querySelectorAll('.inputstyle, .inputendereco, .dropstyle')
+const bordaStyle = document.querySelectorAll('.inputstyle, .inputendereco')
 const mensagensErro = {
   nomecompleto: "Por favor, insira um nome completo válido, contendo sempre o primeiro caracterer maiúsculo.",
   birthday: "Por favor, insira uma data de nascimento válida no formato dd/mm/aaaa.<br><br>Ex: 20/08/2018.",
@@ -33,11 +33,6 @@ exibirLarguraTela();
 // Executar a função quando a janela for redimensionada
 window.addEventListener("resize", exibirLarguraTela);
 
-inputFields.forEach((inputField) => {
-  inputField.addEventListener("blur", () => {
-    validarCampo(inputField);
-  });
-
   let borda;
 
   if (window.matchMedia("(min-width: 1200px)").matches) {
@@ -50,11 +45,14 @@ inputFields.forEach((inputField) => {
     borda = 0.15; // valor padrão caso a tela seja menor que 768px
   }
 
-  console.log(borda);
+inputFields.forEach((inputField) => {
+  inputField.addEventListener("blur", () => {
+    validarCampo(inputField);
+  });
 
-  bordaStyle.forEach((element) => {
+bordaStyle.forEach((element) => {
     element.addEventListener("focus", () => {
-      element.style.border = `${borda}rem solid #004aad !important`;
+      element.style.border = `${borda}rem solid #004aad`;
     });
   });
 });
@@ -165,6 +163,18 @@ let currentProgressId; // Variável para armazenar o ID do intervalo de atualiza
 function validarCampo(campo) {
   const valorCampo = campo.value;
   let regex;
+  let border;
+
+  if (window.matchMedia("(min-width: 1200px)").matches) {
+    border = 0.18;
+  } else if (window.matchMedia("(min-width: 992px)").matches) {
+    border = 0.32;
+  } else if (window.matchMedia("(min-width: 768px)").matches) {
+    border = 0.25;
+  } else {
+    border = 0.15; // valor padrão caso a tela seja menor que 768px
+  }
+
   // Limpa o timeout anterior, se existir
   resetProgress();
   clearTimeout(timeoutId);
@@ -200,13 +210,13 @@ function validarCampo(campo) {
   }
   
   if (valorCampo === "") {
-    campo.style.border = "0.15rem solid #00b3f6";
+    campo.style.border = `${border}rem solid #00b3f6`;
   } else if (regex.test(valorCampo)) {
-    campo.style.border = "0.15rem solid #00b3f6";
+    campo.style.border = `${border}rem solid #00b3f6`;
     document.getElementById("modal").classList.remove('show');
   } else {
-    document.body.focus();
-    campo.style.border = "0.15rem solid red";
+    campo.style.border = `${border}rem solid red`;
+    campo.disabled = true; 
     document.getElementById("msgerror").innerHTML = mensagensErro[campo.id];
     // Exibe o modal
     setTimeout(() => {
@@ -219,6 +229,7 @@ function validarCampo(campo) {
         option.style.display = 'none';
       });
     }, 100);
+
     // Define o tempo de espera antes de começar a carregar a barra de progresso
   // Define o tempo de espera antes de começar a carregar a barra de progresso
   timeoutId = setTimeout(() => {
@@ -303,6 +314,15 @@ function resetProgress() {
   disabledOptions.forEach(option => {
     option.style.display = 'block';
   });
+  inputFields.forEach(inputField => {
+    if (inputField && inputField.disabled) {
+      inputField.disabled = false;
+      inputField.style.border = `${borda}rem solid red`
+      inputField.value = ""
+    }
+    
+  });
+  
 }
 
 
