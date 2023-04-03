@@ -230,7 +230,6 @@ function validarCampo(campo) {
     campo.style.border = `${border}rem solid red`;
     campo.disabled = true; 
     document.getElementById("msgerror").innerHTML = mensagensErro[campo.id];
-    document.body.style.position = 'fixed';
     scrollToModal()
     // Exibe o modal
     setTimeout(() => {
@@ -238,6 +237,7 @@ function validarCampo(campo) {
       document.getElementById("modal").classList.add('show');
       drops.forEach(drop => {
         drop.setAttribute('disabled', true);
+        drop.disabled = true;
       });
       disabledOptions.forEach(option => {
         option.style.display = 'none';
@@ -321,7 +321,6 @@ function resetProgress() {
   clearInterval(intervalId);
   const progressBar = document.getElementById("progress-bar");
   progressBar.value = 0;
-  document.body.style.position = 'static';
   progressBar.classList.remove('show');
   drops.forEach(drop => {
     drop.removeAttribute('disabled');
@@ -329,16 +328,20 @@ function resetProgress() {
   disabledOptions.forEach(option => {
     option.style.display = 'block';
   });
+ 
   inputFields.forEach(inputField => {
     if (inputField && inputField.disabled) {
       inputField.disabled = false;
-      inputField.style.border = `${borda}rem solid red`
-      inputField.value = ""
+      const selectElement = inputField.previousElementSibling;
+      if (selectElement && selectElement.tagName === "SELECT") {
+        selectElement.disabled = false;
+      }
+      inputField.style.border = `${borda}rem solid red`;
+      inputField.value = "";
     }
-    if (inputField === "") {
-      inputField.style.border = `${borda}rem solid #00b3f6`
+    if (inputField.value === "") {
+      inputField.style.border = `${borda}rem solid #00b3f6`;
     }
-    
   });
   
 }
