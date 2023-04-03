@@ -335,6 +335,9 @@ function resetProgress() {
       inputField.style.border = `${borda}rem solid red`
       inputField.value = ""
     }
+    if (inputField === "") {
+      inputField.style.border = `${borda}rem solid #00b3f6`
+    }
     
   });
   
