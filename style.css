@@ -34,6 +34,7 @@ body{
     pointer-events: none; /* Desativa eventos do mouse enquanto o modal está escondido */
     transform: scale(0);
     overflow: hidden;
+    padding-bottom: 50rem;
     
   }
   
