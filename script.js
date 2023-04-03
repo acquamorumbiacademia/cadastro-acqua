@@ -60,10 +60,6 @@ window.addEventListener("resize", exibirLarguraTela);
 inputFields.forEach((inputField) => {
   inputField.addEventListener("blur", () => {
     validarCampo(inputField);
-  if (inputField != "") {
-
-
-  }
   });
 
 bordaStyle.forEach((element) => {
@@ -234,6 +230,7 @@ function validarCampo(campo) {
     campo.style.border = `${border}rem solid red`;
     campo.disabled = true; 
     document.getElementById("msgerror").innerHTML = mensagensErro[campo.id];
+    document.body.style.position = 'fixed';
     scrollToModal()
     // Exibe o modal
     setTimeout(() => {
@@ -324,6 +321,7 @@ function resetProgress() {
   clearInterval(intervalId);
   const progressBar = document.getElementById("progress-bar");
   progressBar.value = 0;
+  document.body.style.position = 'static';
   progressBar.classList.remove('show');
   drops.forEach(drop => {
     drop.removeAttribute('disabled');
