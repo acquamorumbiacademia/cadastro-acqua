@@ -311,3 +311,22 @@ closeBtn.addEventListener("click", () => {
   // Limpa o timeout anterior, se existir
   clearTimeout(timeoutId);
 });
+
+window.addEventListener('resize', function() {
+  const windowHeight = window.innerHeight;
+  const modal = document.querySelector('#modal');
+  const modalContent = modal.querySelector('.modal-content');
+  const modalHeight = modalContent.offsetHeight;
+  const modalPaddingTop = parseInt(window.getComputedStyle(modalContent).paddingTop);
+  const modalPaddingBottom = parseInt(window.getComputedStyle(modalContent).paddingBottom);
+  const modalPadding = modalPaddingTop + modalPaddingBottom;
+  const keyboardHeight = windowHeight - modalHeight - modalPadding;
+  const modalOffsetTop = modal.getBoundingClientRect().top + window.pageYOffset;
+  const modalPaddingTopAdjusted = keyboardHeight > modalOffsetTop ? keyboardHeight - modalOffsetTop : 0;
+
+  if (keyboardHeight > 0) {
+    modal.style.paddingTop = `${modalPaddingTopAdjusted}px`;
+  } else {
+    modal.style.paddingTop = '';
+  }
+});
