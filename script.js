@@ -10,6 +10,7 @@ const celularInput = document.getElementById('celular');
 const closeBtn = document.getElementById("close");
 const drops = document.querySelectorAll('.dropstyle')
 const disabledOptions = document.querySelectorAll('.disabled-option');
+const bordaStyle = document.querySelectorAll('.inputstyle, .inputendereco, .dropstyle')
 const mensagensErro = {
   nomecompleto: "Por favor, insira um nome completo válido, contendo sempre o primeiro caracterer maiúsculo.",
   birthday: "Por favor, insira uma data de nascimento válida no formato dd/mm/aaaa.<br><br>Ex: 20/08/2018.",
@@ -21,6 +22,31 @@ const mensagensErro = {
   celular: "Por favor, insira um número de celular válido e com DDD.<br><br>Ex: 11935897177."
 };
 
+inputFields.forEach((inputField) => {
+  inputField.addEventListener("blur", () => {
+    validarCampo(inputField);
+  });
+
+  let borda;
+
+  if (window.matchMedia("(min-width: 1200px)").matches) {
+    borda = 0.18;
+  } else if (window.matchMedia("(min-width: 992px)").matches) {
+    borda = 0.32;
+  } else if (window.matchMedia("(min-width: 768px)").matches) {
+    borda = 0.25;
+  } else {
+    borda = 0.15; // valor padrão caso a tela seja menor que 768px
+  }
+
+  console.log(borda);
+
+  bordaStyle.forEach((element) => {
+    element.addEventListener("focus", () => {
+      element.style.border = `${borda}rem solid #004aad !important`;
+    });
+  });
+});
 
 function trocarLupa(buttonLupa) {
   buttonLupa.src = "./imagens/lupa.png";
@@ -119,17 +145,6 @@ celularInput.addEventListener('keydown', function(event) {
   this.value = celular;
 });
 
-
-inputFields.forEach((inputField) => {
-  inputField.addEventListener("blur", () => {
-    validarCampo(inputField);
-  });
-  
-  inputField.addEventListener("focus", () => {
-    inputField.style.border = "0.15rem solid #004aad";
-  });
-
-});
 
 let intervalId;
 let timeoutId;

@@ -20,17 +20,17 @@ font-size: 13pt;
 #logo {
 
 width: 8rem !important;
-margin-top: 2rem !important;
+margin-top: 2.5rem !important;
 
 }
 
 #title1 {
 
 font-size: 35pt !important;
-margin-top: 0rem !important;
+margin: 0rem !important;
 line-height: 1.1 !important;
-margin: 1rem !important;
-
+margin-left: 1rem !important;
+margin-right: 1rem !important;
 }
 
 #boxforms {
@@ -43,7 +43,7 @@ margin-top: 1rem !important;
 
 #title2{
 
-font-size: 25pt !important;
+font-size: 28pt !important;
 margin-top: 3rem !important;
 
 }
@@ -131,7 +131,7 @@ font-size: 16pt !important;
 
 font-size: 20pt !important;
 margin-top: 2rem !important;
-margin-bottom: 3rem !important;
+margin-bottom: 5rem !important;
 width: 85% !important;
 height: 3.5rem !important;
 
@@ -183,6 +183,13 @@ font-size: 14pt;
 .alignclose{
 
 margin: 0rem 79% !important;
+
+}
+
+.progress-bar{
+
+    border: solid 0.13rem transparent !important;
+    height: 2rem !important;
 
 }
 
@@ -317,8 +324,8 @@ margin-top: 5rem !important;
 
 #favicon{
 
-width: 8rem !important;
-margin-top: 2.5rem !important;
+width: 7rem !important;
+margin-top: 2em !important;
 
 }
 
@@ -379,19 +386,19 @@ margin-bottom: 5rem !important;
     width: 75% !important;
     margin-top: 1.5rem !important;
     height: 5rem !important;
-    border: solid 0.15rem transparent;
+    border: solid 0.19rem transparent;
 }
 
 #logo {
 
-    width: 15rem !important;
+    width: 14rem !important;
     margin-top: 4rem !important;
 
 }
 
 #title1 {
 
-    font-size: 75pt !important;
+    font-size: 70pt !important;
     margin-top: 0rem !important;
     line-height: 1.1 !important;
     margin-right: 5rem !important;
@@ -566,3 +573,456 @@ margin-bottom: 5rem !important;
 }
 
 }
+
+@media (min-width: 992px){
+
+    .modal-content{
+    
+        width: 75% !important;
+        padding-top: 7rem !important;
+        padding-bottom: 7rem !important;
+    }
+    
+    #title4{
+    
+        font-size: 35pt !important;
+        margin: 5vh 12% !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    #msgerror{
+    
+        font-size: 30pt;
+    
+    }
+    
+    #close{
+    
+        font-size: 90pt !important;
+    }
+    
+    .alignclose{
+    
+        margin: -1rem 81% !important;
+    
+    }
+    
+    .progress-bar{
+    
+        width: 80% !important;
+        margin-top: 1.5rem !important;
+        height: 4rem !important;
+        border: solid 0.20rem transparent;
+    }
+    
+    #logo {
+    
+        width: 18rem !important;
+        margin-top: 5rem !important;
+    
+    }
+    
+    #title1 {
+    
+        font-size: 90pt !important;
+        margin-top: 0rem !important;
+        line-height: 1.1 !important;
+        margin-right: 8rem !important;
+        margin-left: 8rem !important;
+    
+    }
+    
+    #boxforms {
+        
+        width: 92%;
+        padding: 0rem !important;
+        border-radius: 7rem !important;
+        margin-top: 3rem !important;
+        
+    }
+    
+    #title2{
+    
+        font-size: 75pt !important;
+        margin-top: 10rem !important;
+    
+    }
+    
+    #title3{
+    
+        font-size: 40pt !important;
+        margin-left: 8rem !important;
+        margin-right: 8rem !important;
+        margin-top: 1.5rem !important;
+    
+    }
+    
+    
+    .titleforms{
+    
+        margin-top: 2rem !important;
+        font-size: 40pt !important;
+    }
+    
+    .inputstyle{
+    
+        height: 11rem !important;
+        padding-left: 2.5rem !important;
+        padding-right: 2.5rem !important;
+        font-size: 35pt !important;
+        border: solid 0.32rem #00b3f6 !important;
+        
+    }
+    
+    .inputstyle:focus {
+    
+        outline: none;
+        border: solid 0.32rem #004aad;
+        
+        }
+    
+    #searchcep{
+        
+        font-size: 32pt !important;
+        padding-right: 3rem !important;
+    
+    }
+    
+    .titleendereco{
+    
+        margin-top: 2rem !important;
+        font-size: 40pt !important;
+    }
+    
+    #colunas{
+    
+        flex-direction: column !important;
+        margin-bottom: 3rem !important;
+    }
+    
+    
+    .inputendereco{
+    
+        width: 100% !important;
+        height: 11rem !important;
+        padding-left: 2.5rem !important;
+        padding-right: 2.5rem !important;
+        font-size: 35pt !important;
+        border: solid 0.32rem #00b3f6 !important;
+    }
+    
+    .inputendereco:focus{
+    
+        outline: none;
+        border: solid 0.32rem #004aad
+    
+    }
+    
+    #buttoncep{
+    
+        padding: 4rem !important;
+        width: 4.5rem !important;
+        
+    }
+    
+    .space{
+    
+        width: 0 !important;
+        display: none !important;
+    }
+    
+    .divisao{
+    
+        width: 100% !important;
+    
+    }
+    
+    .dropstyle{
+    
+        background-position: 93% center !important;
+        height: 11rem !important;
+        padding-left: 2.5rem !important;
+        padding-right: 2.5rem !important;
+        font-size: 35pt !important;
+        background-size: 4.5rem !important;
+        background-position: 92% center !important;
+        border: solid 0.32rem #00b3f6 !important;
+    
+    }
+    
+    .dropstyle:focus {
+        
+        color: black;
+        outline: none;
+        border: solid 0.32rem #004aad;
+        background-image: url('imagens/seta.png');
+    }
+    
+    #enviar{
+    
+        margin-top: 5.5rem !important;
+        margin-bottom: 13rem !important;
+        width: 89% !important;
+        height: 10rem !important;
+        font-size: 52pt !important;
+    
+    }
+    
+    #rodape{
+    
+        margin-top: 10rem !important;
+    
+    }
+    
+    #favicon{
+    
+        width: 15rem !important;
+        margin-top: 3.5rem !important;
+    
+    }
+    
+    #bodytext{
+    
+        font-size: 32pt !important;
+        margin-left: 5rem !important;
+        margin-right: 5rem !important;
+        text-align: justify !important;
+    }
+    
+    #sign{
+        font-size: 40pt !important;
+        margin-left: 6rem !important;
+        margin-right: 6rem !important;
+        margin-top: 4rem !important;
+        margin-bottom: 10rem !important;
+    
+    }
+    
+    }
+    
+    @media (min-width: 1200px){
+
+        .modal-content{
+        
+            width: 60% !important;
+            padding-top: 4rem !important;
+            padding-bottom: 4rem !important;
+        }
+        
+        #title4{
+        
+            font-size: 20pt !important;
+            margin: 5vh 18% !important;
+            margin-bottom: 0.1rem !important;
+        }
+        
+        #msgerror{
+        
+            font-size: 17pt;
+        
+        }
+        
+        #close{
+        
+            font-size: 50pt !important;
+        }
+        
+        .alignclose{
+        
+            margin: -0.7rem 78.5% !important;
+        
+        }
+        
+        .progress-bar{
+        
+            width: 63% !important;
+            margin-top: 1rem !important;
+            height: 2.5rem !important;
+            border: solid 0.15rem transparent;
+        }
+        
+        #logo {
+        
+            width: 10rem !important;
+            margin-top: 3rem !important;
+        
+        }
+        
+        #title1 {
+        
+            font-size: 45pt !important;
+            margin-top: 0rem !important;
+            line-height: 1.1 !important;
+            margin-right: 6rem !important;
+            margin-left: 6rem !important;
+        
+        }
+        
+        #boxforms {
+            
+            width: 70%;
+            padding: 3rem !important;
+            border-radius: 5rem !important;
+            margin-top: 3rem !important;
+            
+        }
+        
+        #title2{
+        
+            font-size: 35pt !important;
+            margin-top: 2rem !important;
+        
+        }
+        
+        #title3{
+        
+            font-size: 18pt !important;
+            margin-left: 7rem !important;
+            margin-right: 7rem !important;
+            margin-top: 0.5rem !important;
+        
+        }
+        
+        
+        .titleforms{
+        
+            margin-top: 0.5rem !important;
+            font-size: 18pt !important;
+            margin-left: 1rem !important;
+
+        }
+        
+        .inputstyle{
+        
+            height: 4rem !important;
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+            font-size: 16pt !important;
+            border: solid 0.18rem #00b3f6 !important;
+            
+        }
+        
+        .inputstyle:focus {
+        
+            outline: none;
+            border: solid 0.18rem #004aad;
+            
+            }
+        
+        #searchcep{
+            
+            font-size: 15pt !important;
+            padding-right: 2rem !important;
+        
+        }
+        
+        .titleendereco{
+        
+            margin-top: 1rem !important;
+            font-size: 18pt !important;
+            margin-left: 1rem !important;
+        }
+        
+        #colunas{
+        
+            flex-direction: row !important;
+            margin-bottom: 2rem !important;
+        }
+        
+        
+        .inputendereco{
+        
+            width: 100% !important;
+            height: 4rem !important;
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+            font-size: 16pt !important;
+            border: solid 0.18rem #00b3f6 !important;
+        }
+        
+        .inputendereco:focus{
+        
+            outline: none;
+            border: solid 0.18rem #004aad
+        
+        }
+        
+        #buttoncep{
+        
+            padding: 3% !important;
+            width: 2rem !important;
+            
+        }
+        
+        .space{
+        
+            width: 10% !important;
+        }
+        
+        .divisao{
+        
+            width: 100% !important;
+        
+        }
+        
+        .dropstyle{
+        
+            height: 4rem !important;
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+            font-size: 16pt !important;
+            background-size: 2rem !important;
+            background-position: right 4% center !important;
+            border: solid 0.18rem #00b3f6 !important;
+        
+        }
+        
+        .dropstyle:focus {
+            
+            color: black;
+            outline: none;
+            border: solid 0.18rem #004aad;
+            background-image: url('imagens/seta.png');
+        }
+        
+        #enviar{
+        
+            margin-top: 2rem !important;
+            margin-bottom: 3rem !important;
+            width: 55% !important;
+            height: 4rem !important;
+            font-size: 25pt !important;
+        
+        }
+        
+        #rodape{
+        
+            margin-top: 4rem !important;
+        
+        }
+        
+        #favicon{
+        
+            width: 7rem !important;
+            margin-top: 2rem !important;
+        
+        }
+        
+        #bodytext{
+        
+            font-size: 14pt !important;
+            margin-left: 7rem !important;
+            margin-right: 7rem !important;
+            text-align: justify !important;
+        }
+        
+        #sign{
+            font-size: 18pt !important;
+            margin-left: 10rem !important;
+            margin-right: 10rem !important;
+            margin-top: 1.5rem !important;
+            margin-bottom: 5rem !important;
+        
+        }
+        
+        }
