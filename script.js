@@ -12,6 +12,7 @@ const disabledOptions = document.querySelectorAll('.disabled-option');
 const bordaStyle = document.querySelectorAll('.inputstyle, .inputendereco')
 const modal = document.getElementById("modal");
 const elementsToDisable = document.querySelectorAll('input, select, textarea, button');
+const hidden = document.getElementById("hidden")
 const mensagensErro = {
   nomecompleto: "Por favor, insira um nome completo válido, contendo sempre o primeiro caracterer maiúsculo.",
   birthday: "Por favor, insira uma data de nascimento válida no formato dd/mm/aaaa.<br><br>Ex: 20/08/2018.",
@@ -228,8 +229,6 @@ function validarCampo(campo) {
     document.getElementById("modal").classList.remove('show');
   } else {
     campo.style.border = `${border}rem solid red`;
-    campo.disabled = true;
-    campo.setAttribute('disabled', true)
     elementsToDisable.forEach(element => {
       element.disabled = true;
     });
@@ -241,6 +240,8 @@ function validarCampo(campo) {
       // Exibe o modal
       document.getElementById("modal").classList.add('show');
     }, 100);
+
+    hidden.click()
 
     // Define o tempo de espera antes de começar a carregar a barra de progresso
   // Define o tempo de espera antes de começar a carregar a barra de progresso
@@ -275,7 +276,7 @@ function validarCampo(campo) {
   }, intervalTime);
   // Adiciona a classe 'show' à barra de progresso para exibi-la
   progressBar.classList.add('show');
-}, 0); 
+}, 100); 
   }
 
 }
@@ -323,6 +324,10 @@ function resetProgress() {
  
   elementsToDisable.forEach(element => {
     element.disabled = false;
+    if (element != "") {
+      element.value = ""
+    }
+
   });
   
 }

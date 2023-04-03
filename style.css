@@ -62,6 +62,11 @@ position: fixed;
 
 }
 
+#hidden{
+
+    visibility: hidden;
+}
+
 #close {
     color: #004aad;
     float: right;
@@ -111,7 +116,7 @@ position: fixed;
     padding: 0rem;
     padding-bottom: 0rem;
     padding-left: 0rem;
-    margin: 15vh 15%;
+    margin: 12vh 15%;
     margin-bottom: 0.2rem;
     color: #00b3f6;
     position: relative;
