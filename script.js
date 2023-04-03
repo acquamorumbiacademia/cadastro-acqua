@@ -314,7 +314,7 @@ closeBtn.addEventListener("click", () => {
 
 const modal = document.querySelector('#modal');
 const modalContent = modal.querySelector('.modal-content');
-const modalTop = modal.getBoundingClientRect().top;
+const newTop = Math.max(0, modalTop + (currentHeight - modalBottom - keyboardHeight));
 let previousHeight = window.innerHeight;
 
 window.addEventListener('focusin', function() {
