@@ -1,4 +1,4 @@
-const inputFields = document.querySelectorAll("#nomecompleto, #birthday, #cpf, #cep, #email, #residencial, #celular");
+const inputFields = document.querySelectorAll("#nomecompleto, #birthday, #cpf, #cep, #email, #residencial, #celular, #rg, #cep, #endereco, #numero, #complemento, #comoconheceu");
 const cepInput = document.getElementById("cep");
 const enderecoInput = document.getElementById("endereco");
 const buttonLupa = document.getElementById("buttoncep")
@@ -11,6 +11,7 @@ const closeBtn = document.getElementById("close");
 const bordaStyle = document.querySelectorAll('.inputstyle, .inputendereco')
 const modal = document.getElementById("modal");
 const hidden = document.getElementById("hidden")
+const elementsToDisable = document.querySelectorAll('input, select, textarea');
 const mensagensErro = {
   nomecompleto: "Por favor, insira um nome completo válido, contendo sempre o primeiro caracterer maiúsculo.",
   birthday: "Por favor, insira uma data de nascimento válida no formato dd/mm/aaaa.<br><br>Ex: 20/08/2018.",
@@ -33,14 +34,25 @@ const mensagensErro = {
 // // Executar a função quando a janela for redimensionada
 // window.addEventListener("resize", exibirLarguraTela);
 
+// function scrollToModal() {
+//   // Define o valor de deslocamento para o topo do modal
+//   const topOffset = modal.getBoundingClientRect().top + window.scrollY;
+
+//   // Rola a página suavemente até o início do modal
+//   modal.scrollIntoView({ behavior: 'smooth' });
+
+//   // Subtrai a altura do cabeçalho do navegador
+//   window.scrollTo(0, topOffset - 100);
+// }
+
   let borda;
 
   if (window.matchMedia("(min-width: 1200px)").matches) {
     borda = 0.18;
-  } else if (window.matchMedia("(min-width: 992px)").matches) {
-    borda = 0.32;
-  } else if (window.matchMedia("(min-width: 768px)").matches) {
-    borda = 0.25;
+  // } else if (window.matchMedia("(min-width: 992px)").matches) {
+  //   borda = 0.32;
+  // } else if (window.matchMedia("(min-width: 768px)").matches) {
+  //   borda = 0.25;
   } else {
     borda = 0.15; // valor padrão caso a tela seja menor que 768px
   }
@@ -167,10 +179,10 @@ function validarCampo(campo) {
 
   if (window.matchMedia("(min-width: 1200px)").matches) {
     border = 0.18;
-  } else if (window.matchMedia("(min-width: 992px)").matches) {
-    border = 0.32;
-  } else if (window.matchMedia("(min-width: 768px)").matches) {
-    border = 0.25;
+  // } else if (window.matchMedia("(min-width: 992px)").matches) {
+  //   border = 0.32;
+  // } else if (window.matchMedia("(min-width: 768px)").matches) {
+  //   border = 0.25;
   } else {
     border = 0.15; // valor padrão caso a tela seja menor que 768px
   }
@@ -217,13 +229,20 @@ function validarCampo(campo) {
   } else {
     campo.style.border = `${border}rem solid red`;
     campo.disabled = true;
+
+    elementsToDisable.forEach(element => {
+    element.disabled = true;
+    });
+    inputFields.disabled = true; 
+
     document.getElementById("msgerror").innerHTML = mensagensErro[campo.id];
     // Exibe o modal
     setTimeout(() => {
       // Exibe o modal
       document.getElementById("modal").classList.add('show');
     }, 100);
-
+    
+    scrollToModal()
     hidden.click()
 
     // Define o tempo de espera antes de começar a carregar a barra de progresso
@@ -308,8 +327,11 @@ function resetProgress() {
     if (inputField && inputField.disabled) {
       inputField.style.border = `{borda}rem solid red`
       inputField.value = ""
-      inputField.disabled = false;
     }
+  });
+
+  elementsToDisable.forEach(element => {
+    element.disabled = false;
   });
   
 }
