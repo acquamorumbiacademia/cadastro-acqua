@@ -840,7 +840,14 @@ margin-bottom: 5rem !important;
             height: 2.5rem !important;
             border: solid 0.15rem transparent !important;
         }
+              
+        #full{
         
+            width: 4.5rem;
+            display: block;
+            padding: 1.5rem;
+        }
+
         #logo {
         
             width: 10rem !important;

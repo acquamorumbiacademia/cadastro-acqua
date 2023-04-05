@@ -1,4 +1,4 @@
-const inputFields = document.querySelectorAll("#nomecompleto, #birthday, #cpf, #cep, #email, #residencial, #celular, #rg, #cep, #endereco, #numero, #complemento, #comoconheceu");
+const inputFields = document.querySelectorAll("#nomecompleto, #birthday, #cpf, #cep, #email, #residencial, #celular, #rg, #cep, #endereco, #numero, #complemento, #comoconheceu, #responsavel");
 const cepInput = document.getElementById("cep");
 const enderecoInput = document.getElementById("endereco");
 const buttonLupa = document.getElementById("buttoncep")
@@ -12,6 +12,8 @@ const bordaStyle = document.querySelectorAll('.inputstyle, .inputendereco')
 const modal = document.getElementById("modal");
 const hidden = document.getElementById("hidden")
 const elementsToDisable = document.querySelectorAll('input, select, textarea');
+const buttonFull = document.getElementById('full')
+const responsaveis = document.querySelectorAll('.responsavel');
 const mensagensErro = {
   nomecompleto: "Por favor, insira um nome completo válido, contendo sempre o primeiro caracterer maiúsculo.",
   birthday: "Por favor, insira uma data de nascimento válida no formato dd/mm/aaaa.<br><br>Ex: 20/08/2018.",
@@ -20,19 +22,20 @@ const mensagensErro = {
   numero: "Por favor, insira um número válido.",
   email: "Por favor, insira um e-mail válido.",
   residencial: "Por favor, insira um número de telefone residencial válido e com DDD.<br><br>Ex: 1135897177.",
-  celular: "Por favor, insira um número de celular válido e com DDD.<br><br>Ex: 11935897177."
+  celular: "Por favor, insira um número de celular válido e com DDD.<br><br>Ex: 11935897177.",
+  responsavel: "Por favor, insira um nome completo de responsável válido, contendo sempre o primeiro caracterer maiúsculo."
 };
 
-function exibirLarguraTela() {
-  let largura = window.innerWidth;
-  document.getElementById("resolucao").textContent = `Largura: ${largura}px`;
-}
+// function exibirLarguraTela() {
+//   let largura = window.innerWidth;
+//   document.getElementById("resolucao").textContent = `Largura: ${largura}px`;
+// }
 
-// Executar a função no carregamento da página
-exibirLarguraTela();
+// // Executar a função no carregamento da página
+// exibirLarguraTela();
 
-// Executar a função quando a janela for redimensionada
-window.addEventListener("resize", exibirLarguraTela);
+// // Executar a função quando a janela for redimensionada
+// window.addEventListener("resize", exibirLarguraTela);
 
 // function scrollToModal() {
 //   // Define o valor de deslocamento para o topo do modal
@@ -54,7 +57,7 @@ window.addEventListener("resize", exibirLarguraTela);
   // } else if (window.matchMedia("(min-width: 768px)").matches) {
   //   borda = 0.25;
   } else {
-    borda = 0.15; // valor padrão caso a tela seja menor que 768px
+    borda = 0.13; // valor padrão caso a tela seja menor que 768px
   }
 
 inputFields.forEach((inputField) => {
@@ -68,6 +71,35 @@ bordaStyle.forEach((element) => {
     });
   });
 });
+
+full.addEventListener("click", () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+    buttonFull.src = "./imagens/minimize.png";
+
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+      buttonFull.src = "./imagens/full-azul.png";
+    }
+  }
+});
+
+function trocarFull(buttonFull) {
+  if (document.fullscreenElement) {
+    buttonFull.src = "./imagens/minimize.png";
+  } else {
+    buttonFull.src = "./imagens/full.png";
+  }
+}
+
+function voltarFull(buttonFull) {
+  if (document.fullscreenElement) {
+    buttonFull.src = "./imagens/minimize-azul.png";
+  } else {
+    buttonFull.src = "./imagens/full-azul.png";
+  }
+}
 
 function trocarLupa(buttonLupa) {
   buttonLupa.src = "./imagens/lupa.png";
@@ -216,6 +248,9 @@ function validarCampo(campo) {
     case "celular":
       regex = /^\d.{11}$/;
       break;
+    case "responsavel":
+      regex = /[A-ZÀ-Ú][a-zà-ú]+.[a-z].*[A-ZÀ-Ú][a-zà-ú]+/;
+      break;
     default:
       regex = null;
       break;
@@ -281,6 +316,27 @@ function validarCampo(campo) {
   }
 
 }
+
+nascimentoInput.addEventListener('input', () => {
+  const data = nascimentoInput.value.split('/');
+  const dia = parseInt(data[0]);
+  const mes = parseInt(data[1]) - 1;
+  const ano = parseInt(data[2]);
+
+  const hoje = new Date();
+  const nascimento = new Date(ano, mes, dia);
+  const idade = hoje.getFullYear() - nascimento.getFullYear();
+
+  if (idade < 18) {
+    responsaveis.forEach((responsavel) => {
+      responsavel.classList.add('show');
+    });
+  } else {
+    responsaveis.forEach((responsavel) => {
+      responsavel.classList.remove('show');
+    });
+  }
+});
 
 buttonLupa.addEventListener("click", () => {
   const cep = cepInput.value.replace(/\D/g, "");

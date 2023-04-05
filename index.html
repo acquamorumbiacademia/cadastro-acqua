@@ -28,6 +28,11 @@
     </div>
 </div>
 
+<div id="full-container">
+
+<img src="./imagens/full-azul.png" alt="Icone de tela cheia." id="full" onmouseover="trocarFull(this)" onmouseout="voltarFull(this)">
+
+</div>
 <!--Start Header-->
 <div id="header">
 <!--Resolucao-->
@@ -56,6 +61,11 @@
 <!--Start Data de nascimento-->
 <div class="titleforms">Data de nascimento:</div>
 <input type="tel" pattern="\*d"  id="birthday" class="inputstyle" placeholder="Ex: 26/08/2018">
+<!--Data de nascimento End-->
+
+<!--Start Data de nascimento-->
+<div class="titleforms responsavel">Nome do responsável:</div>
+<input  id="responsavel" class="inputstyle responsavel" placeholder="Ex: Nome e sobrenome">
 <!--Data de nascimento End-->
 
 
@@ -140,6 +150,17 @@
     <option class="disabled-option" value="Indicação">Indicação de um amigo(a)</option>
     </select>
 <!--Como conheceu End-->
+
+<!--Start Consultores-->
+<div class="titleforms">Consultor responsável:</div>
+<select class="dropstyle disabled-option" id="comoconheceu">
+    <option class="disabled-option" value="" selected disabled hidden>Selecione uma opção...</option>
+    <option class="disabled-option" value="Alexia">Alexia</option>
+    <option class="disabled-option" value="Cleber">Cleber</option>
+    <option class="disabled-option" value="Letícia">Letícia</option>
+    <option class="disabled-option" value="Thamires">Thamires</option>
+    </select>
+<!--Consultores End-->
 </div>
 
 <button id="enviar">Cadastrar</button>

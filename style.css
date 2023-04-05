@@ -17,7 +17,7 @@ body{
     font-size: 16pt;
     font-weight: 900;
     margin: 2;
-    display: block;
+    display: none;
 }
 
 #modal {
@@ -188,6 +188,28 @@ position: fixed;
 
 #progress-bar.show {
     display: block;
+}
+
+#full-container{
+
+    width: 100%;
+    height: auto;
+    position: absolute;
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+
+#full{
+
+    width: 2.5rem;
+    display: block;
+    padding: 1.5rem;
+}
+
+#full:hover{
+
+    cursor: pointer;
 }
 
 #header{
@@ -371,6 +393,19 @@ border: solid 0.15rem #004aad;
     outline: none;
     background-image: url('imagens/seta.png');
 }
+
+.responsavel {
+    display: none;
+    opacity: 0;
+    transform: scale(0);
+    transition:  all 0.3s ease-in-out;
+  }
+
+  .responsavel.show {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+  }
 
 #titlecep{
 
