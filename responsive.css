@@ -17,6 +17,46 @@ font-size: 13pt;
 
 }
 
+#title1foto{
+
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+    font-size: 20pt;
+}
+
+
+.fecharfoto-container{
+
+    margin: auto 59.5%;
+    margin-right: 0rem;
+
+}
+
+#fecharfoto{
+
+    font-size: 55pt;
+
+}
+
+#titlecamera{
+
+    font-size: 20pt;
+}
+
+#bodytextcamera{
+
+    font-size: 14pt;
+}
+
+#container-buttonfotos{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+  }
+
 #logo {
 
 width: 8rem !important;
@@ -73,11 +113,31 @@ font-size: 14pt !important;
 
 .dropstyle{
 
-background-position: 93% center !important;
+background-position: right 6% center;
 height: 4.5rem !important;
 padding-left: 1.5rem !important;
 padding-right: 1.5rem !important;
 font-size: 14pt;
+}
+
+.buttonfotostyle{
+
+    width: 100%;
+    height: 4.5rem;
+    border: 0;
+    border-radius: 99.9rem;
+    box-sizing: border-box;
+    background-color: #00b3f6;
+    margin-top: 1.5rem;
+    background-image: url(./imagens/icon-foto.png);
+    background-repeat: no-repeat;
+    background-size: 1.6rem;
+    background-position: right 8% center;
+    font-size: 16pt;
+    font-family: Nunito, sans-serif;
+    font-weight: 900;
+    color: white;
+   
 }
 
 #searchcep{
@@ -193,6 +253,45 @@ margin: 0rem 79% !important;
 
 }
 
+#title1foto{
+
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-bottom: 3rem;
+    font-size: 30pt;
+}
+
+
+.fecharfoto-container{
+
+    margin: auto 59.5%;
+    margin-right: 0rem;
+
+}
+
+#fecharfoto{
+
+    font-size: 65pt;
+
+}
+
+#imgcamera{
+
+    width: 5rem;
+}
+
+#titlecamera{
+
+    font-size: 25pt;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+#bodytextcamera{
+
+    font-size: 17pt;
+}
+
 #logo {
 
 width: 10rem !important;
@@ -250,6 +349,26 @@ font-size: 17pt !important;
 
 }
 
+.buttonfotostyle{
+
+    width: 100%;
+    height: 5rem;
+    border: 0;
+    border-radius: 99.9rem;
+    box-sizing: border-box;
+    background-color: #00b3f6;
+    margin-top: 1.5rem;
+    background-image: url(./imagens/icon-foto.png);
+    background-repeat: no-repeat;
+    background-size: 2.1rem;
+    background-position: right 8% center;
+    font-size: 20pt;
+    font-family: Nunito, sans-serif;
+    font-weight: 900;
+    color: white;
+   
+}
+
 #searchcep{
 
 font-size: 14pt !important;
@@ -299,7 +418,7 @@ font-size: 20pt !important;
 
 .dropstyle{
 
-background-position: 93% center !important;
+background-position: right 7% center !important;
 height: 5.5rem !important;
 padding-left: 1.5rem !important;
 padding-right: 1.5rem !important;
@@ -848,6 +967,58 @@ margin-bottom: 5rem !important;
             padding: 1.5rem;
         }
 
+        #title1foto{
+
+            margin-left: 15rem;
+            margin-right: 15rem;
+            margin-bottom: 5rem;
+            font-size: 55pt;
+        }
+        
+        
+        .fecharfoto-container{
+        
+            margin: auto 83.5%;
+            margin-right: 0rem;
+        
+        }
+        
+        #fecharfoto{
+        
+            font-size: 90pt;
+        
+        }
+        
+        #imgcamera{
+        
+            width: 5.5rem;
+        }
+        
+        #titlecamera{
+        
+            font-size: 30pt;
+            margin-left: 10rem;
+            margin-right: 10rem;
+        }
+        
+        #bodytextcamera{
+        
+            font-size: 25pt;
+            margin-left: 10rem;
+            margin-right: 10rem;
+        }
+
+        #video{
+
+            width: 70%;
+            height: auto;
+            border-radius: 2.5rem;
+            margin: 3rem;
+            margin-bottom: 0rem;
+            margin-top: 3.5rem;
+            
+        }
+
         #logo {
         
             width: 10rem !important;
@@ -915,6 +1086,26 @@ margin-bottom: 5rem !important;
             border: solid 0.18rem #004aad;
             
             }
+
+            .buttonfotostyle{
+
+                width: 100%;
+                height: 3.5rem;
+                border: 0;
+                border-radius: 99.9rem;
+                box-sizing: border-box;
+                background-color: #00b3f6;
+                margin-top: 1.5rem;
+                background-image: url(./imagens/icon-foto.png);
+                background-repeat: no-repeat;
+                background-size: 2rem;
+                background-position: right 8% center;
+                font-size: 18pt;
+                font-family: Nunito, sans-serif;
+                font-weight: 900;
+                color: white;
+               
+            }
         
         #searchcep{
             
@@ -956,8 +1147,9 @@ margin-bottom: 5rem !important;
         
         #buttoncep{
         
-            padding: 3% !important;
+            padding-right: 4.3% !important;
             width: 2rem !important;
+            
             
         }
         
@@ -979,7 +1171,7 @@ margin-bottom: 5rem !important;
             padding-right: 2rem !important;
             font-size: 16pt !important;
             background-size: 2rem !important;
-            background-position: right 4% center !important;
+            background-position: right 8% center !important;
             border: solid 0.18rem #00b3f6;
         
         }

@@ -397,3 +397,83 @@ closeBtn.addEventListener("click", () => {
   // Limpa o timeout anterior, se existir
   clearTimeout(timeoutId);
 });
+
+const title1foto = document.getElementById('title1foto');
+const showfotoList = document.querySelectorAll('.showfoto');
+const video = document.getElementById('video');
+const msgsCamera = document.querySelectorAll('.msgcamera');
+const fecharFotoBtn = document.getElementById('fecharfoto');
+const fotoContainer = document.getElementById('foto-container');
+const abrirFoto = document.getElementById('buttonfoto')
+const photo = document.getElementById('photo');
+const snap = document.getElementById('fotografar');
+const canvas = document.createElement('canvas');
+const confirmarFotoBtn = document.getElementById('confirmarfoto');
+
+title1foto.addEventListener('animationend', () => {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then((stream) => {
+      video.srcObject = stream;
+      video.play();
+      showfotoList.forEach(showfoto => {
+        showfoto.style.display = 'block';
+      });
+      // Esconde a mensagem de erro em caso de sucesso
+      msgsCamera.forEach(msgCamera => { 
+        msgCamera.style.display = 'none';
+      });
+    })
+    .catch((err) => {
+      console.log('Erro ao acessar a câmera:', err.message);
+      msgsCamera.forEach(msgCamera => { 
+        msgCamera.classList.add('show');
+      })
+    });
+});
+
+
+fecharFotoBtn.addEventListener('click', () => {
+  showfotoList.forEach(showfoto => {
+    showfoto.style.display = 'none';
+  });
+  msgsCamera.forEach(msgCamera => { 
+    msgCamera.classList.remove('show');
+  })
+  photo.style.display = 'none';
+  fotoContainer.style.display = 'none';
+  video.pause();
+  video.srcObject = null;
+});
+
+abrirFoto.addEventListener('click', () =>{
+
+fotoContainer.style.display = 'flex';
+
+})
+
+snap.addEventListener('click', () => {
+  // Se o botão já possui a classe 'novafoto', remove a foto e a classe
+  if (snap.classList.contains('novafoto')) {
+    snap.classList.remove('novafoto');
+    photo.style.display = 'none';
+    photo.src = '';
+  } else {
+    // Se o botão não possui a classe, tira a foto normalmente
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    canvas.getContext('2d').drawImage(video, 0, 0);
+    photo.src = canvas.toDataURL('image/png');
+    photo.style.display = 'block';
+    snap.classList.add('novafoto');
+  }
+});
+
+let fotoCadastro = null;
+
+confirmarFotoBtn.addEventListener('click', () => {
+  fotoCadastro = photo.src;
+  abrirFoto.classList.add('confirme')
+  abrirFoto.innerText = 'Foto salva!';
+  // fecha o modal
+    fotoContainer.style.display = 'none';
+});

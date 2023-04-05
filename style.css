@@ -190,6 +190,252 @@ position: fixed;
     display: block;
 }
 
+#foto-container{
+
+    width: 100%;
+    height: 100%;
+    padding-bottom: 50rem;
+    background-color: rgba(255, 255, 255, 0.940);
+    position: fixed;
+    z-index: 500;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.fecharfoto-container {
+    height: 100%;
+    position: fixed;
+    align-items: start;
+    margin: auto 63.5%;
+    margin-right: 0rem;
+    z-index: 1;
+}
+
+
+
+#fecharfoto {
+    color: #004aad;
+    float: right;
+    font-size: 50pt;
+    font-family: Nunito, sans-serif;
+    position: fixed;
+    justify-content: right;
+    align-items: center;
+    z-index: 1000;
+    font-weight: 900;
+    padding: 0rem;
+    margin: 0rem auto;
+}
+
+#fecharfoto:hover,
+#fechafoto:focus {
+    color: #00b3f6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#title1foto {
+    font-size: 20pt;
+    font-weight: 700;
+    color: #00b3f6;
+    line-height: 1;
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: scale(0.0);
+    position: absolute;
+    animation: fade-in-out 6s ease-in-out forwards;
+  }
+  
+  @keyframes fade-in-out {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    70% {
+    opacity: 1;
+    transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.5);
+      display: none;
+    }
+  }
+
+  #titlecamera {
+    font-size: 16pt;
+    font-weight: 900;
+    color: red;
+    margin: 2rem;
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+    text-decoration: underline;
+    text-align: center;
+    line-height: 1.2;
+
+  }
+
+  #bodytextcamera{
+    font-size: 12pt;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    text-align: center;
+    margin-top: 0.3;
+    line-height: 1.1;
+
+  }
+
+  .msgcamera {
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+  }
+  
+  .msgcamera.show {
+    opacity: 1;
+  }
+
+#vídeofoto{
+
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+
+}
+
+#video, #photo{
+
+    width: 75%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 2.5rem;
+
+    
+}
+
+#photo {
+    width: 75%;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2.5rem;
+    z-index: 1000;
+    display: none;
+    position: absolute;
+  }
+
+  #container-buttonfotos{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+  }
+
+.buttonsfotostyle{
+    width: 10rem;
+    height: 3.5rem;
+    margin-top: 1.5rem;
+    border: 0;
+    border-radius: 8rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem 0rem rgba(0, 0, 0, 0.300);
+    background-repeat: no-repeat;
+    background-size: 1.7rem;
+    background-position: 50%;
+}
+
+#fotografar{
+
+    background-color: #00b3f6;
+    background-image: url(./imagens/icon-foto.png);
+    
+}
+
+#fotografar:hover{
+
+    background-color: #004aad;
+    background-image: url(./imagens/icon-foto-azul.png);
+}
+
+#spacebuttons{
+
+    width: 10%;
+}
+
+#confirmarfoto{
+
+    background-color: #47A896;
+    background-image: url(./imagens/confirmar.png);
+    
+}
+
+#confirmarfoto:hover{
+
+    background-color: #5fffd7;
+    background-image: url(./imagens/confirmar-azul.png);
+}
+
+.novafoto{
+
+    background-color: #004aad !important;
+    background-image: url(./imagens/refazer.png) !important;
+    
+}
+
+.novafoto:hover{
+
+    background-color: #00b3f6 !important;
+    background-image: url(./imagens/refazer-azul.png) !important;
+}
+
+#canvas{
+
+    display: none;
+}
+
+.showfoto{
+    opacity: 0;
+    transform: scale(0.5);
+    display: none;
+    animation: entradafoto 1s ease-in forwards;
+
+}
+
+@keyframes entradafoto {
+
+    0%{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+  
+
 #full-container{
 
     width: 100%;
@@ -406,6 +652,48 @@ border: solid 0.15rem #004aad;
     opacity: 1;
     transform: scale(1);
   }
+
+  .buttonfotostyle{
+
+    width: 100%;
+    height: 4.5rem;
+    border: 0;
+    border-radius: 99.9rem;
+    box-sizing: border-box;
+    padding-right: 1.5rem;
+    background-color: #00b3f6;
+    margin-top: 1.5rem;
+    background-image: url(./imagens/icon-foto.png);
+    background-repeat: no-repeat;
+    background-size: 1.5rem;
+    background-position: right 10% center;
+    font-size: 14pt;
+    font-family: Nunito, sans-serif;
+    font-weight: 900;
+    color: white;
+   
+}
+
+.buttonfotostyle:hover {
+
+background-color: #004aad;
+background-image: url(./imagens/icon-foto-azul.png);
+color: #00b3f6;
+
+}
+
+.confirme{
+
+    background-color: green !important;
+    background-image: url(./imagens/confirmar.png) !important;
+    
+}
+
+.confirme:hover{
+
+    color: white;
+}
+
 
 #titlecep{
 

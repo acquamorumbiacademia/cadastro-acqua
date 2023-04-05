@@ -14,8 +14,9 @@
 </head>
 <body>
 
+    
+<!--Start Modal Erro-->
 <div id="modal">
-    <!--Button Hidden-->
     <button id="hidden"></button>
     <div id="title4">NOTIFICAÇÃO:</div>
     <div class="alignclose">
@@ -27,12 +28,35 @@
     <progress class="progress-bar" value="0" id="progress-bar" max="100"></progress>
     </div>
 </div>
+<!--Modal Erro End-->
 
-<div id="full-container">
-
-<img src="./imagens/full-azul.png" alt="Icone de tela cheia." id="full" onmouseover="trocarFull(this)" onmouseout="voltarFull(this)">
+<!-- Start Foto -->
+<div id="foto-container">
+    <div class="fecharfoto-container">
+        <span id="fecharfoto">&times;</span></div>
+<p id="title1foto">Agora vamos tirar uma foto?</p>
+<img id="imgcamera" class="msgcamera" src="./imagens/erro.png" alt="Icone de erro na câmera.">
+<p id="titlecamera" class="msgcamera">FALHA AO ACESSAR A CÂMERA!</p> 
+<p id="bodytextcamera" class="msgcamera">Por favor, verifique se a câmera deste dispositivo está habilita. Caso seja necessário, feche a janela e tente novamente após realizar a confirmação.</p> 
+<div id="videofoto">
+<img id="photo" src="" alt="Foto">
+<video id="video" class="showfoto"></video>
+</div>
+<div id="container-buttonfotos">
+<button id="fotografar" class="showfoto buttonsfotostyle"></button>
+<div id="spacebuttons"></div>
+<button id="confirmarfoto" class="buttonsfotostyle showfoto"></button>
+</div>
 
 </div>
+<!-- Foto End -->
+
+<!-- Start Tela Cheia -->
+<div id="full-container">
+<img src="./imagens/full-azul.png" alt="Icone de tela cheia." id="full" onmouseover="trocarFull(this)" onmouseout="voltarFull(this)">
+</div>
+<!-- Tela Cheia End -->
+
 <!--Start Header-->
 <div id="header">
 <!--Resolucao-->
@@ -89,6 +113,10 @@
 <div class="titleforms">RG:</div>
 <input id="rg" type="tel" class="inputstyle" placeholder="Ex: 12.345.678-9">
 <!--RG End-->
+
+<!--Start Button Foto-->
+<button id="buttonfoto"class="buttonfotostyle">Tire sua foto</button>
+<!--Button Foto End-->
 
 <!--Start CEP-->
 <div id="titlecep">
