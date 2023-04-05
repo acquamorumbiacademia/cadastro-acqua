@@ -23,16 +23,16 @@ const mensagensErro = {
   celular: "Por favor, insira um número de celular válido e com DDD.<br><br>Ex: 11935897177."
 };
 
-// function exibirLarguraTela() {
-//   let largura = window.innerWidth;
-//   document.getElementById("resolucao").textContent = `Largura: ${largura}px`;
-// }
+function exibirLarguraTela() {
+  let largura = window.innerWidth;
+  document.getElementById("resolucao").textContent = `Largura: ${largura}px`;
+}
 
-// // Executar a função no carregamento da página
-// exibirLarguraTela();
+// Executar a função no carregamento da página
+exibirLarguraTela();
 
-// // Executar a função quando a janela for redimensionada
-// window.addEventListener("resize", exibirLarguraTela);
+// Executar a função quando a janela for redimensionada
+window.addEventListener("resize", exibirLarguraTela);
 
 // function scrollToModal() {
 //   // Define o valor de deslocamento para o topo do modal
@@ -234,7 +234,6 @@ function validarCampo(campo) {
     element.disabled = true;
     });
     inputFields.disabled = true; 
-
     document.getElementById("msgerror").innerHTML = mensagensErro[campo.id];
     // Exibe o modal
     setTimeout(() => {
@@ -242,7 +241,7 @@ function validarCampo(campo) {
       document.getElementById("modal").classList.add('show');
     }, 100);
     
-    scrollToModal()
+    // scrollToModal()
     hidden.click()
 
     // Define o tempo de espera antes de começar a carregar a barra de progresso
