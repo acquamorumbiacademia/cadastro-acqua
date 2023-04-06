@@ -328,7 +328,7 @@ position: fixed;
 #video, #photo{
 
     width: 75%;
-    height: auto;
+    height: 75%;
     margin: 0 auto;
     border-radius: 2.5rem;
 
@@ -337,7 +337,7 @@ position: fixed;
 
 #photo {
     width: 75%;
-    height: auto;
+    height: 75%;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 2.5rem;
