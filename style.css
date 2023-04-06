@@ -201,8 +201,7 @@ position: fixed;
     display: none;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;  
     
 }
 
@@ -215,7 +214,10 @@ position: fixed;
     z-index: 1;
 }
 
+#imgcamera{
 
+    width: 3rem;
+}
 
 #fecharfoto {
     color: #004aad;
@@ -328,16 +330,13 @@ position: fixed;
 #video, #photo{
 
     width: 75%;
-    height: 75%;
+    height: auto;
     margin: 0 auto;
     border-radius: 2.5rem;
 
-    
 }
 
 #photo {
-    width: 75%;
-    height: 75%;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 2.5rem;
@@ -363,6 +362,7 @@ position: fixed;
     box-shadow: 0.2rem 0.2rem 0.2rem 0rem rgba(0, 0, 0, 0.300);
     background-repeat: no-repeat;
     background-size: 1.7rem;
+    position: relative;
     background-position: 50%;
 }
 

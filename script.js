@@ -425,7 +425,7 @@ title1foto.addEventListener('animationend', () => {
     })
     .catch((err) => {
       console.log('Erro ao acessar a câmera:', err.message);
-      msgsCamera.forEach(msgCamera => { 
+        msgsCamera.forEach(msgCamera => { 
         msgCamera.classList.add('show');
       })
     });
