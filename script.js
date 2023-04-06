@@ -405,7 +405,6 @@ const msgsCamera = document.querySelectorAll('.msgcamera');
 const fecharFotoBtn = document.getElementById('fecharfoto');
 const fotoContainer = document.getElementById('foto-container');
 const abrirFoto = document.getElementById('buttonfoto')
-const photo = document.getElementById('photo');
 const snap = document.getElementById('fotografar');
 const canvas = document.createElement('canvas');
 const confirmarFotoBtn = document.getElementById('confirmarfoto');
@@ -441,15 +440,12 @@ fecharFotoBtn.addEventListener('click', () => {
     msgCamera.classList.remove('show');
   })
   snap.classList.remove('novafoto');
-  photo.style.display = 'none';
   fotoContainer.style.display = 'none';
   confirmarFotoBtn.classList.remove('naoconfirmada');
   video.pause();
-  video.srcObject = null;
-});
+ });
 
 abrirFoto.addEventListener('click', () =>{
-
 fotoContainer.style.display = 'flex';
 
 })
@@ -459,33 +455,34 @@ snap.addEventListener('click', () => {
   // Se o botão já possui a classe 'novafoto', remove a foto e a classe
   if (snap.classList.contains('novafoto')) {
     snap.classList.remove('novafoto');
-    photo.style.display = 'none';
-    photo.src = '';
+    confirmarFotoBtn.classList.add('naoconfirmada');
+    abrirFoto.classList.remove('confirme');
+    abrirFoto.innerText = 'Tire sua foto';
+    video.play()
   } else {
     // Se o botão não possui a classe, tira a foto normalmente
+    video.pause()
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
     canvas.getContext('2d').drawImage(video, 0, 0);
-    photo.src = canvas.toDataURL('image/png');
-    photo.style.display = 'block';
+    fotoCadastro = canvas.toDataURL('image/png');
     snap.classList.add('novafoto');
     confirmarFotoBtn.classList.remove('naoconfirmada');
-    fotoCadastro = photo.src;
+    abrirFoto.classList.add('confirme');
+    abrirFoto.innerText = 'Foto salva!';
+    
   }
 });
 
 confirmarFotoBtn.addEventListener('click', () => {
   if (fotoCadastro) {
-    fotoCadastro = photo.src;
     snap.classList.remove('novafoto');
-    abrirFoto.classList.add('confirme');
-    abrirFoto.innerText = 'Foto salva!';
     video.pause();
     video.srcObject = null;
     // fecha o modal
     fotoContainer.style.display = 'none';
-    
   } else {
+
     confirmarFotoBtn.classList.add('naoconfirmada');
   }
 });

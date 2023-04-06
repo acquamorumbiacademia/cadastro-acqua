@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Bem-vindo(a) à Acqua</title>
 </head>
 <body>
@@ -39,9 +40,6 @@
 <p id="titlecamera" class="msgcamera">FALHA AO ACESSAR A CÂMERA!</p> 
 <p id="bodytextcamera" class="msgcamera">Por favor, verifique se a câmera deste dispositivo está habilitada. Caso seja necessário, feche a janela e tente novamente após realizar a confirmação.</p> 
 <div id="videofoto">
-<div id="limitesfoto">
-<img id="photo" src="" alt="Foto">
-</div>
 <video id="video" class="showfoto"></video>
 </div>
 <div id="container-buttonfotos">
@@ -58,7 +56,7 @@
 <img src="./imagens/full-azul.png" alt="Icone de tela cheia." id="full" onmouseover="trocarFull(this)" onmouseout="voltarFull(this)">
 </div>
 <!-- Tela Cheia End -->
-
+<a id="linkFoto" href="#" target="_blank">Link da foto</a>
 <!--Start Header-->
 <div id="header">
 <!--Resolucao-->
@@ -188,6 +186,7 @@
     <option class="disabled-option" value="Alexia">Alexia</option>
     <option class="disabled-option" value="Cleber">Cleber</option>
     <option class="disabled-option" value="Letícia">Letícia</option>
+    <option class="disabled-option" value="Thamires">Thamires</option>
     <option class="disabled-option" value="Thamires">Thamires</option>
     </select>
 <!--Consultores End-->

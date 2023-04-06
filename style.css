@@ -198,10 +198,10 @@ position: fixed;
     background-color: rgba(255, 255, 255, 0.940);
     position: fixed;
     z-index: 500;
-    display: none;
     flex-direction: column;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
+    display: none;
     
 }
 
@@ -316,38 +316,26 @@ position: fixed;
   }
 
 
-#vídeofoto{
+    #vídeofoto{
 
-    width: 75%; 
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    
+        width: 100%; 
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: self-end;
+        position: static;
+        
 
-}
+    }
 
-#video, #photo{
+#video{
 
-    width: 75%;
+    width: 85%;
     height: auto;
     margin: 0 auto;
     border-radius: 2.5rem;
-    min-width: 52%;
-    position: relative ;
+    position: relative;
 }
-
-#photo {
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2.5rem;
-    z-index: 1000;
-    display: none;
-    position: absolute;
-    object-fit: contain;
-
-  }
 
   #container-buttonfotos{
 
@@ -368,7 +356,7 @@ position: fixed;
     background-size: 1.7rem;
     position: relative;
     background-position: 50%;
-    z-index: 2000;
+    z-index: 1000;
     
 }
 
