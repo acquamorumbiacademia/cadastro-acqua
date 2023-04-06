@@ -330,7 +330,7 @@ position: fixed;
 #video, #photo{
 
     width: 75%;
-    height: auto;
+    height: calc(75vw * 4 / 3); /* proporção 4:3 */
     margin: 0 auto;
     border-radius: 2.5rem;
 
