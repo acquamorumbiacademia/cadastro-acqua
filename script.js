@@ -409,6 +409,7 @@ const photo = document.getElementById('photo');
 const snap = document.getElementById('fotografar');
 const canvas = document.createElement('canvas');
 const confirmarFotoBtn = document.getElementById('confirmarfoto');
+let fotoCadastro = null;
 
 title1foto.addEventListener('animationend', () => {
   navigator.mediaDevices.getUserMedia({ video: true })
@@ -439,8 +440,10 @@ fecharFotoBtn.addEventListener('click', () => {
   msgsCamera.forEach(msgCamera => { 
     msgCamera.classList.remove('show');
   })
+  snap.classList.remove('novafoto');
   photo.style.display = 'none';
   fotoContainer.style.display = 'none';
+  confirmarFotoBtn.classList.remove('naoconfirmada');
   video.pause();
   video.srcObject = null;
 });
@@ -450,6 +453,7 @@ abrirFoto.addEventListener('click', () =>{
 fotoContainer.style.display = 'flex';
 
 })
+
 
 snap.addEventListener('click', () => {
   // Se o botão já possui a classe 'novafoto', remove a foto e a classe
@@ -465,15 +469,26 @@ snap.addEventListener('click', () => {
     photo.src = canvas.toDataURL('image/png');
     photo.style.display = 'block';
     snap.classList.add('novafoto');
+    confirmarFotoBtn.classList.remove('naoconfirmada');
+    fotoCadastro = photo.src;
   }
 });
 
-let fotoCadastro = null;
-
 confirmarFotoBtn.addEventListener('click', () => {
-  fotoCadastro = photo.src;
-  abrirFoto.classList.add('confirme')
-  abrirFoto.innerText = 'Foto salva!';
-  // fecha o modal
+  if (fotoCadastro) {
+    fotoCadastro = photo.src;
+    snap.classList.remove('novafoto');
+    abrirFoto.classList.add('confirme');
+    abrirFoto.innerText = 'Foto salva!';
+    video.pause();
+    video.srcObject = null;
+    // fecha o modal
     fotoContainer.style.display = 'none';
+    
+  } else {
+    confirmarFotoBtn.classList.add('naoconfirmada');
+  }
 });
+
+
+

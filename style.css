@@ -242,7 +242,7 @@ position: fixed;
 
 #title1foto {
     font-size: 20pt;
-    font-weight: 700;
+    font-weight: 800;
     color: #00b3f6;
     line-height: 1;
     text-align: center;
@@ -315,9 +315,10 @@ position: fixed;
     opacity: 1;
   }
 
+
 #vídeofoto{
 
-    width: 100%;
+    width: 75%; 
     height: auto;
     display: flex;
     justify-content: center;
@@ -330,10 +331,11 @@ position: fixed;
 #video, #photo{
 
     width: 75%;
-    height: calc(75vw * 4 / 3); /* proporção 4:3 */
+    height: auto;
     margin: 0 auto;
     border-radius: 2.5rem;
-
+    min-width: 52%;
+    position: relative ;
 }
 
 #photo {
@@ -343,6 +345,8 @@ position: fixed;
     z-index: 1000;
     display: none;
     position: absolute;
+    object-fit: contain;
+
   }
 
   #container-buttonfotos{
@@ -364,6 +368,8 @@ position: fixed;
     background-size: 1.7rem;
     position: relative;
     background-position: 50%;
+    z-index: 2000;
+    
 }
 
 #fotografar{
@@ -395,6 +401,12 @@ position: fixed;
 
     background-color: #5fffd7;
     background-image: url(./imagens/confirmar-azul.png);
+}
+
+.naoconfirmada{
+
+    background-color: red !important;
+    background-image: url(./imagens/fechadas.png) !important;
 }
 
 .novafoto{
