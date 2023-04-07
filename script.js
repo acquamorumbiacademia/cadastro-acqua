@@ -1,4 +1,4 @@
-const inputFields = document.querySelectorAll("#nomecompleto, #birthday, #cpf, #cep, #email, #residencial, #celular, #rg, #cep, #endereco, #numero, #complemento, #comoconheceu, #responsavel");
+const inputFields = document.querySelectorAll("#nomecompleto, #birthday, #cpf, #cep, #email, #residencial, #celular, #rg, #cep, #endereco, #numero, #complemento, #comoconheceu, #responsavel, #consultoresacqua");
 const cepInput = document.getElementById("cep");
 const enderecoInput = document.getElementById("endereco");
 const buttonLupa = document.getElementById("buttoncep")
@@ -14,6 +14,9 @@ const hidden = document.getElementById("hidden")
 const elementsToDisable = document.querySelectorAll('input, select, textarea');
 const buttonFull = document.getElementById('full')
 const responsaveis = document.querySelectorAll('.responsavel');
+const botaoConsultores = document.getElementById('consultoresacqua')
+const containerConsultores = document.getElementById('corpoconsultor')
+const imgConsultor = document.querySelectorAll('.imgconsultor')
 const mensagensErro = {
   nomecompleto: "Por favor, insira um nome completo válido, contendo sempre o primeiro caracterer maiúsculo.",
   birthday: "Por favor, insira uma data de nascimento válida no formato dd/mm/aaaa.<br><br>Ex: 20/08/2018.",
@@ -47,6 +50,13 @@ const mensagensErro = {
 //   // Subtrai a altura do cabeçalho do navegador
 //   window.scrollTo(0, topOffset - 100);
 // }
+
+  botaoConsultores.addEventListener('click', () => {
+
+    containerConsultores.style.display = 'block';
+    document.body.style.overflow = 'hidden'
+
+  })
 
   let borda;
 
@@ -442,11 +452,13 @@ fecharFotoBtn.addEventListener('click', () => {
   snap.classList.remove('novafoto');
   fotoContainer.style.display = 'none';
   confirmarFotoBtn.classList.remove('naoconfirmada');
+  document.body.style.overflow = 'auto'
   video.pause();
  });
 
 abrirFoto.addEventListener('click', () =>{
 fotoContainer.style.display = 'flex';
+document.body.style.overflow = 'hidden'
 
 })
 
@@ -479,6 +491,10 @@ confirmarFotoBtn.addEventListener('click', () => {
     snap.classList.remove('novafoto');
     video.pause();
     video.srcObject = null;
+    showfotoList.forEach(showfoto => {
+      showfoto.style.display = 'none';
+    });
+    document.body.style.overflow = 'auto'
     // fecha o modal
     fotoContainer.style.display = 'none';
   } else {

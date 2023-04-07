@@ -15,7 +15,6 @@
 </head>
 <body>
 
-    
 <!--Start Modal Erro-->
 <div id="modal">
     <button id="hidden"></button>
@@ -31,7 +30,7 @@
 </div>
 <!--Modal Erro End-->
 
-<!-- Start Foto -->
+<!-- Start Modal Foto -->
 <div id="foto-container" >
     <div class="fecharfoto-container">
         <span id="fecharfoto">&times;</span></div>
@@ -43,20 +42,67 @@
 <video id="video" class="showfoto"></video>
 </div>
 <div id="container-buttonfotos">
-<button id="fotografar" class="showfoto buttonsfotostyle"></button>
+<button id="fotografar" class="buttonsfotostyle showfoto"></button>
 <div id="spacebuttons"></div>
 <button id="confirmarfoto" class="buttonsfotostyle showfoto"></button>
 </div>
 
 </div>
-<!-- Foto End -->
+<!-- Modal Foto End -->
+
+
+<!-- Modal Consultores Start -->
+<div id="corpoconsultor">
+    <div class="fecharconsultores-container">
+        <span id="fecharconsultor">&times;</span></div>
+<div id="modalconsultores">
+
+<div class="consultores">
+
+<div id="adriana" class="consultor">
+    <img class="imgconsultor" src="./imagens/adriana.png" alt="Imagem consultor.">
+    <p class="txtconsultor">Adriana</p></div>    
+    <div id="spaceconsultor"></div>
+<div id="alexia" class="consultor">
+    <img class="imgconsultor" src="./imagens/alexia.png" alt="Imagem consultor.">
+    <p class="txtconsultor">Alexia</p></div>
+
+</div>
+
+<div class="consultores">
+
+    <div id="cleber" class="consultor">
+        <img class="imgconsultor" src="./imagens/cleber.png" alt="Imagem consultor.">
+        <p class="txtconsultor">Cleber</p></div>    
+        <div id="spaceconsultor"></div>
+    <div id="leticia" class="consultor">
+        <img class="imgconsultor" src="./imagens/leticia.png" alt="Imagem consultor.">
+        <p class="txtconsultor">Letícia</p></div>
+    
+    </div>
+
+<div class="consultores">
+
+<div id="renan" class="consultor"> 
+    <img class="imgconsultor" src="./imagens/renan.png" alt="Imagem consultor.">
+    <p class="txtconsultor">Renan</p></div>    
+    <div id="spaceconsultor"></div>
+<div id="thamire" class="consultor">
+    <img class="imgconsultor" src="./imagens/thamires.png" alt="Imagem consultor.">
+    <p class="txtconsultor">Thamires</p></div>
+
+</div>    
+
+</div>
+</div>
+<!-- Modal Consultores End -->
 
 <!-- Start Tela Cheia -->
 <div id="full-container">
 <img src="./imagens/full-azul.png" alt="Icone de tela cheia." id="full" onmouseover="trocarFull(this)" onmouseout="voltarFull(this)">
 </div>
 <!-- Tela Cheia End -->
-<a id="linkFoto" href="#" target="_blank">Link da foto</a>
+
 <!--Start Header-->
 <div id="header">
 <!--Resolucao-->
@@ -121,7 +167,7 @@
 <!--Start CEP-->
 <div id="titlecep">
 <div class="titleforms">CEP:</div>
-<a href="https://buscacepinter.correios.com.br/app/endereco/index.php" id="searchcep">Não sei meu CEP</a>
+<a href="https://buscacepinter.correios.com.br/app/endereco/index.php" id="searchcep"  target="_blank">Não sei meu CEP</a>
 </div>
 <div id="campocep">
 <img id="buttoncep" onmouseover="trocarLupa(this)" onmouseout="voltarLupa(this)" src="imagens/lupa-azul.png" alt="Icone de busca de endereço.">
@@ -181,14 +227,7 @@
 
 <!--Start Consultores-->
 <div class="titleforms">Consultor responsável:</div>
-<select class="dropstyle disabled-option" id="comoconheceu">
-    <option class="disabled-option" value="" selected disabled hidden>Selecione uma opção...</option>
-    <option class="disabled-option" value="Alexia">Alexia</option>
-    <option class="disabled-option" value="Cleber">Cleber</option>
-    <option class="disabled-option" value="Letícia">Letícia</option>
-    <option class="disabled-option" value="Thamires">Thamires</option>
-    <option class="disabled-option" value="Thamires">Thamires</option>
-    </select>
+<button id="consultoresacqua" class="inputstyle">Escolha seu consultor</button>
 <!--Consultores End-->
 </div>
 
