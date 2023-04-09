@@ -1,4 +1,4 @@
-const inputFields = document.querySelectorAll("#nomecompleto, #birthday, #cpf, #cep, #email, #residencial, #celular, #rg, #cep, #endereco, #numero, #complemento, #comoconheceu, #responsavel, #consultoresacqua");
+const inputFields = document.querySelectorAll("#nome, #sobrenome ,#birthday, #cpf, #cep, #email, #residencial, #celular, #rg, #cep, #endereco, #numero, #complemento, #comoconheceu, #responsavel, #consultoresacqua");
 const cepInput = document.getElementById("cep");
 const enderecoInput = document.getElementById("endereco");
 const buttonLupa = document.getElementById("buttoncep")
@@ -14,11 +14,25 @@ const hidden = document.getElementById("hidden")
 const elementsToDisable = document.querySelectorAll('input, select, textarea');
 const buttonFull = document.getElementById('full')
 const responsaveis = document.querySelectorAll('.responsavel');
-const botaoConsultores = document.getElementById('consultoresacqua')
-const containerConsultores = document.getElementById('corpoconsultor')
-const imgConsultor = document.querySelectorAll('.imgconsultor')
+const botaoConsultores = document.getElementById('consultoresacqua');
+const containerConsultores = document.getElementById('corpoconsultor');
+const imgConsultores = document.querySelectorAll('.imgconsultor');
+const btnFecharConsultor = document.getElementById('fecharconsultor');
+const title1foto = document.getElementById('title1foto');
+const showfotoList = document.querySelectorAll('.showfoto');
+const video = document.getElementById('video');
+const msgsCamera = document.querySelectorAll('.msgcamera');
+const fecharFotoBtn = document.getElementById('fecharfoto');
+const fotoContainer = document.getElementById('foto-container');
+const abrirFoto = document.getElementById('buttonfoto')
+const snap = document.getElementById('fotografar');
+const canvas = document.createElement('canvas');
+const confirmarFotoBtn = document.getElementById('confirmarfoto');
+const enviarBotao = document.querySelector('#enviar');
+const camposObri = document.querySelectorAll("#nome, #sobrenome ,#birthday, #cpf, #email, #residencial, #celular, #endereco, #numero");
 const mensagensErro = {
-  nomecompleto: "Por favor, insira um nome completo válido, contendo sempre o primeiro caracterer maiúsculo.",
+  nome: "Por favor, insira um nome válido, contendo sempre o primeiro caracterer maiúsculo.",
+  sobrenome: "Por favor, insira um sobrenome válido, contendo sempre o primeiro caracterer maiúsculo.",
   birthday: "Por favor, insira uma data de nascimento válida no formato dd/mm/aaaa.<br><br>Ex: 20/08/2018.",
   cpf: "Por favor, insira seu CPF com a pontuação padrão.<br><br>Ex: 123.456.789-10",
   cep: "Por favor, insira um CEP válido e com a pontuação padrão.<br><br>Ex: 05710-030.",
@@ -51,12 +65,44 @@ const mensagensErro = {
 //   window.scrollTo(0, topOffset - 100);
 // }
 
-  botaoConsultores.addEventListener('click', () => {
+botaoConsultores.addEventListener('click', () => {
+  containerConsultores.style.display = window.innerWidth < 480 ? 'block' : 'flex';
+  setTimeout(() => {
+    document.body.style.overflow = 'hidden';
+  }, 500);
+});
 
-    containerConsultores.style.display = 'block';
-    document.body.style.overflow = 'hidden'
+  btnFecharConsultor.addEventListener('click', () => {
+    containerConsultores.style.display = 'none'
+    document.body.style.overflow = 'auto'
+    botaoConsultores.innerText = consultorRespo
+    imgConsultores.forEach(imgConsultor => {
+      imgConsultor.classList.remove('consultorselect')
+    })
 
   })
+
+  imgConsultores.forEach(imgConsultor => {
+    imgConsultor.addEventListener('click', event => {
+      const clicado = event.target;
+      imgConsultores.forEach(img => {
+        if (img !== clicado) {
+          img.classList.remove('consultorselect');
+        }
+      });
+      clicado.classList.add('consultorselect');
+    });
+  });
+
+  let consultorRespo;
+
+  imgConsultores.forEach(img => {
+    img.addEventListener('click', event => {
+      const nome = event.currentTarget.parentNode.id;
+      consultorRespo = nome;
+      // console.log(consultorRespo)
+    });
+  });
 
   let borda;
 
@@ -234,8 +280,11 @@ function validarCampo(campo) {
   clearTimeout(timeoutId);
 
   switch (campo.id) {
-    case "nomecompleto":
-      regex = /[A-ZÀ-Ú][a-zà-ú]+.[a-z].*[A-ZÀ-Ú][a-zà-ú]+/;
+    case "nome":
+      regex = /[A-ZÀ-Ú][a-zà-ú].+[a-z]{0}/;
+      break;
+    case "sobrenome":
+      regex = /[A-ZÀ-Ú][a-zà-ú]+.[a-z].*[A-ZÀ-Ú][a-zà-ú]+/ ;
       break;
     case "birthday":
       regex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
@@ -408,16 +457,6 @@ closeBtn.addEventListener("click", () => {
   clearTimeout(timeoutId);
 });
 
-const title1foto = document.getElementById('title1foto');
-const showfotoList = document.querySelectorAll('.showfoto');
-const video = document.getElementById('video');
-const msgsCamera = document.querySelectorAll('.msgcamera');
-const fecharFotoBtn = document.getElementById('fecharfoto');
-const fotoContainer = document.getElementById('foto-container');
-const abrirFoto = document.getElementById('buttonfoto')
-const snap = document.getElementById('fotografar');
-const canvas = document.createElement('canvas');
-const confirmarFotoBtn = document.getElementById('confirmarfoto');
 let fotoCadastro = null;
 
 title1foto.addEventListener('animationend', () => {
@@ -458,7 +497,9 @@ fecharFotoBtn.addEventListener('click', () => {
 
 abrirFoto.addEventListener('click', () =>{
 fotoContainer.style.display = 'flex';
-document.body.style.overflow = 'hidden'
+setTimeout(() => {
+  document.body.style.overflow = 'hidden';
+}, 500);
 
 })
 
@@ -503,5 +544,76 @@ confirmarFotoBtn.addEventListener('click', () => {
   }
 });
 
+enviarBotao.addEventListener('click', () => {
+  let todosPreenchidos = true;
+  let border;
 
+  if (window.matchMedia("(min-width: 1200px)").matches) {
+    border = 0.18;
+  // } else if (window.matchMedia("(min-width: 992px)").matches) {
+  //   border = 0.32;
+  // } else if (window.matchMedia("(min-width: 768px)").matches) {
+  //   border = 0.25;
+  } else {
+    border = 0.15; // valor padrão caso a tela seja menor que 768px
+  }
+
+  // Limpa o timeout anterior, se existir
+  resetProgress();
+  clearTimeout(timeoutId);
+
+  camposObri.forEach((campo) => {
+    if (!campo.value) {
+      todosPreenchidos = false;
+      document.getElementById("msgerror").innerHTML = "Por favor, preencha os campos obrigatórios.";
+      campo.style.border = `${border}rem solid red`;
+      setTimeout(() => {
+        // Exibe o modal
+        document.getElementById("modal").classList.add('show');
+      }, 100);
+      
+      // scrollToModal()
+      hidden.click()
+  
+      // Define o tempo de espera antes de começar a carregar a barra de progresso
+    // Define o tempo de espera antes de começar a carregar a barra de progresso
+    timeoutId = setTimeout(() => {
+    // Seleciona a barra de progresso
+    const progressBar = document.getElementById("progress-bar");
+    // Define o valor inicial da barra de progresso como 0
+    let progressValue = 0;
+    // Define o tempo total de duração da barra em segundos
+    const totalTime = 5;
+    // Calcula o intervalo de atualização da barra em milissegundos
+    const intervalTime = totalTime * 1000 / 100;
+    
+    // Cancela o intervalo de atualização atual, se existir
+    if (currentProgressId) {
+      clearInterval(currentProgressId);
+      currentProgressId = null;
+    }
+  
+    // Define o intervalo de atualização da barra de progresso
+    currentProgressId = setInterval(() => {
+      progressValue += 1;
+      progressBar.value = progressValue;
+      if (progressValue >= 100) {
+        clearInterval(currentProgressId);
+        currentProgressId = null;
+        // Remove a classe 'show' do modal e da barra de progresso após a conclusão da animação
+        document.getElementById("modal").classList.remove('show');
+        progressBar.classList.remove('show');
+        resetProgress();
+      }
+    }, intervalTime);
+    // Adiciona a classe 'show' à barra de progresso para exibi-la
+    progressBar.classList.add('show');
+  }, 0); 
+    }
+  });
+
+  if (todosPreenchidos) {
+    // lógica para enviar o formulário
+  }
+});
 

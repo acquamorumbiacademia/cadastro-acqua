@@ -59,11 +59,11 @@
 
 <div class="consultores">
 
-<div id="adriana" class="consultor">
+<div id="Adriana" class="consultor">
     <img class="imgconsultor" src="./imagens/adriana.png" alt="Imagem consultor.">
     <p class="txtconsultor">Adriana</p></div>    
     <div id="spaceconsultor"></div>
-<div id="alexia" class="consultor">
+<div id="Alexia" class="consultor">
     <img class="imgconsultor" src="./imagens/alexia.png" alt="Imagem consultor.">
     <p class="txtconsultor">Alexia</p></div>
 
@@ -71,11 +71,11 @@
 
 <div class="consultores">
 
-    <div id="cleber" class="consultor">
+    <div id="Cleber" class="consultor">
         <img class="imgconsultor" src="./imagens/cleber.png" alt="Imagem consultor.">
         <p class="txtconsultor">Cleber</p></div>    
         <div id="spaceconsultor"></div>
-    <div id="leticia" class="consultor">
+    <div id="Letícia" class="consultor">
         <img class="imgconsultor" src="./imagens/leticia.png" alt="Imagem consultor.">
         <p class="txtconsultor">Letícia</p></div>
     
@@ -83,11 +83,11 @@
 
 <div class="consultores">
 
-<div id="renan" class="consultor"> 
+<div id="Renan" class="consultor"> 
     <img class="imgconsultor" src="./imagens/renan.png" alt="Imagem consultor.">
     <p class="txtconsultor">Renan</p></div>    
     <div id="spaceconsultor"></div>
-<div id="thamire" class="consultor">
+<div id="Thamires" class="consultor">
     <img class="imgconsultor" src="./imagens/thamires.png" alt="Imagem consultor.">
     <p class="txtconsultor">Thamires</p></div>
 
@@ -124,13 +124,18 @@
 <div class="centerleft">
 
 <!--Start Nome Completo-->
-<div class="titleforms">Nome completo:</div>
-<input id="nomecompleto" class="inputstyle" placeholder="Ex: Nome e sobrenome">
+<div class="titleforms">Nome:</div>
+<input id="nome" class="inputstyle" placeholder="Ex: Seu nome" maxlength="50">
+<!--Nome Completo End-->
+
+<!--Start Nome Completo-->
+<div class="titleforms">Sobrenome:</div>
+<input id="sobrenome" class="inputstyle" placeholder="Ex: Seu sobrenome" maxlength="50">
 <!--Nome Completo End-->
 
 <!--Start Data de nascimento-->
 <div class="titleforms">Data de nascimento:</div>
-<input type="tel" pattern="\*d"  id="birthday" class="inputstyle" placeholder="Ex: 26/08/2018">
+<input type="tel" pattern="\*d"  id="birthday" class="inputstyle" placeholder="Ex: 26/08/2018" maxlength="10">
 <!--Data de nascimento End-->
 
 <!--Start Data de nascimento-->
@@ -143,21 +148,21 @@
 <div class="titleforms">Gênero:</div>
 <select class="dropstyle" id="genero">
     <option class="disabled-option" value="" selected disabled hidden>Selecione uma opção...</option>
-    <option class="disabled-option" value="Feminino">Feminino</option>
-    <option class="disabled-option" value="Masculino">Masculino</option>
-    <option class="disabled-option" value="Prefiro não dizer">Prefiro não dizer</option>
+    <option class="disabled-option" value="F">Feminino</option>
+    <option class="disabled-option" value="M">Masculino</option>
+    <option class="disabled-option" value="P">Prefiro não dizer</option>
     </select>
 
 <!--Como conheceu End-->
 
 <!--Start CPF-->
 <div class="titleforms">CPF:</div>
-<input id="cpf" type="tel" pattern="\*d" class="inputstyle" placeholder="Ex: 123.456.789-10">
+<input id="cpf" type="tel" pattern="\*d" class="inputstyle" placeholder="Ex: 123.456.789-10" maxlength="14">
 <!--CPF End-->
 
 <!--Start RG-->
 <div class="titleforms">RG:</div>
-<input id="rg" type="tel" class="inputstyle" placeholder="Ex: 12.345.678-9">
+<input id="rg" type="tel" class="inputstyle" placeholder="Ex: 12.345.678-9" maxlength="15">
 <!--RG End-->
 
 <!--Start Button Foto-->
@@ -171,7 +176,7 @@
 </div>
 <div id="campocep">
 <img id="buttoncep" onmouseover="trocarLupa(this)" onmouseout="voltarLupa(this)" src="imagens/lupa-azul.png" alt="Icone de busca de endereço.">
-<input id="cep" type="tel" pattern="\*d" class="inputstyle buttoncep" placeholder="Ex: 12.345.678-9">
+<input id="cep" type="tel" pattern="\*d" class="inputstyle buttoncep" placeholder="Ex: 12.345.678-9" maxlength="10">
 </div>
 <!--CEP End-->
 
@@ -185,43 +190,43 @@
 <div class="divisao">
 <!--Start Número-->
 <div class="titleendereco">Número:</div>
-<input type="tel" pattern="\*d" id="numero" class="inputendereco" placeholder="Ex: 942">
+<input type="tel" pattern="\*d" id="numero" class="inputendereco" placeholder="Ex: 942" maxlength="6">
 </div>
 
 <div id="space"></div>
 <!--Start Complemento-->
 <div class="divisao">
 <div class="titleendereco">Complemento:</div>
-<input id="complemento" class="inputendereco" placeholder="Ex: Apt 1 Bloco 2">
+<input id="complemento" class="inputendereco" placeholder="Ex: Apt 1 Bloco 2" maxlength="50">
 </div>
 </div>
 
 <!--Start Email-->
 <div class="titleforms">E-mail:</div>
-<input id="email" class="inputstyle" placeholder="Ex: acqua@acqua.com.br">
+<input id="email" class="inputstyle" placeholder="Ex: acqua@acqua.com.br" maxlength="50">
 <!--Email End-->
 
 <!--Start Telefone Residencial-->
 <div class="titleforms">Telefone residencial:</div>
-<input type="tel" pattern="\*d" id="residencial" class="inputstyle" placeholder="Ex: 1135897177">
+<input type="tel" pattern="\*d" id="residencial" class="inputstyle" placeholder="Ex: 1135897177" maxlength="12">
 <!--Telefone Residencial End-->
 
 <!--Start Telefone Celular-->
 <div class="titleforms">Telefone celular:</div>
-<input id="celular" type="tel" pattern="\*d" class="inputstyle" placeholder="Ex: 11935897177">
+<input id="celular" type="tel" pattern="\*d" class="inputstyle" placeholder="Ex: 11935897177" maxlength="12">
 <!--Telefone Celular End-->
 
 <!--Start Como conheceu-->
 <div class="titleforms">Como conheceu:</div>
 <select class="dropstyle disabled-option" id="comoconheceu">
     <option class="disabled-option" value="" selected disabled hidden>Selecione uma opção...</option>
-    <option class="disabled-option" value="Google">Google</option>
-    <option class="disabled-option" value="Instagram">Instagram</option>
-    <option class="disabled-option" value="Facebook">Facebook</option>
-    <option class="disabled-option" value="Linkedin">Linkedin</option>
-    <option class="disabled-option" value="Youtube">Youtube</option>
-    <option class="disabled-option" value="Fachada">Passei na frente</option>
-    <option class="disabled-option" value="Indicação">Indicação de um amigo(a)</option>
+    <option class="disabled-option" value="PESQUISA NO GOOGLE">Google</option>
+    <option class="disabled-option" value="REDES SOCIAIS">Instagram</option>
+    <option class="disabled-option" value="REDES SOCIAIS">Facebook</option>
+    <option class="disabled-option" value="REDES SOCIAIS">Linkedin</option>
+    <option class="disabled-option" value="REDES SOCIAIS">Youtube</option>
+    <option class="disabled-option" value="FACHADA (PASSOU EM FRENTE)">Passei na frente</option>
+    <option class="disabled-option" value="INDICAÇÃO">Indicação de um amigo(a)</option>
     </select>
 <!--Como conheceu End-->
 

@@ -437,9 +437,9 @@ position: fixed;
 
 .fecharconsultores-container {
     height: 100%;
-    position: fixed;
+    position: absolute;
     align-items: start;
-    margin: -1rem 81.5%;
+    margin: -1rem 77.5%;
     margin-right: 0rem;
     z-index: 1;
 }
@@ -449,17 +449,18 @@ position: fixed;
     float: right;
     font-size: 50pt;
     font-family: Nunito, sans-serif;
-    position: fixed;
+    position: absolute;
     justify-content: right;
     align-items: center;
     z-index: 1000;
     font-weight: 900;
     padding: 0rem;
     margin: 0rem auto;
+    cursor: pointer;
 }
 
-#fecharfoto:hover,
-#fechafoto:focus {
+#fecharconsultor:hover,
+#fechaconsultor:focus {
     color: #00b3f6;
     text-decoration: none;
     cursor: pointer;
@@ -472,13 +473,33 @@ position: fixed;
     overflow: scroll;
     z-index: 200;
     display: none;
+    background-color: rgba(255, 255, 255, 0.940);
+    animation: inandout 0.5s ease-in forwards;
+    align-items: center;
+    
+    
+    
+}
+
+@keyframes inandout{
+
+    0%{
+        opacity: 0;
+        
+    }
+
+    100%{
+
+        opacity: 1;
+       
+    }
+
 }
 
  #modalconsultores{
 
     width: 100%;
     height: auto;
-    background-color: rgba(255, 255, 255, 0.940);
     display: flex;
     flex-direction: column;
     padding: 0rem;
@@ -486,7 +507,7 @@ position: fixed;
     padding-bottom: 0rem;
     position: absolute;
     justify-content: center;
-
+    align-items: center;
 
 }
 
@@ -496,6 +517,7 @@ position: fixed;
     flex-direction: column;
     justify-content: center;
     margin: 0;
+
 }
 
 .imgconsultor{
@@ -509,6 +531,7 @@ position: fixed;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
 #spaceconsultor{
@@ -739,15 +762,11 @@ border: solid 0.15rem #004aad;
 
 .responsavel {
     display: none;
-    opacity: 0;
-    transform: scale(0);
-    transition:  all 0.3s ease-in-out;
   }
 
   .responsavel.show {
     display: block;
-    opacity: 1;
-    transform: scale(1);
+    animation: inandout 1s ease-in-out forwards;
   }
 
   .buttonfotostyle{
@@ -901,7 +920,7 @@ border: solid 0.15rem #004aad;
     background-image: url('./imagens/profile.png');
     background-size: 2rem;
     background-repeat: no-repeat;
-    background-position: right 8% center;
+    background-position: right 5% center;
     text-align: left;
     box-sizing: border-box;
     cursor: pointer;
@@ -913,12 +932,19 @@ border: solid 0.15rem #004aad;
     box-sizing: border-box;
     font-weight: 500;
     padding-bottom: 0rem;
+    padding-right: 0rem;
 
 }
 
 #consultoresacqua:hover{
-    outline: none;
+    
     background-image: url('./imagens/profile-azul.png');
+    
+}
+
+#consultoresacqua:focus{
+    outline: none !important;
+    color: black;
 }
 
 #enviar{
