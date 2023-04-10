@@ -82,6 +82,12 @@ font-size: 13pt;
 .txtconsultor{
 
     font-size: 16pt;
+
+}
+
+#imgreload{
+
+    margin-bottom: 6rem;
 }
 
 #logo {
@@ -1123,6 +1129,39 @@ margin-bottom: 5rem !important;
 .txtconsultor{
 
     font-size: 22pt;
+}
+
+@keyframes rotate {
+    0% { 
+      -webkit-transform: rotate(0deg) scale(2.0); 
+      -moz-transform: rotate(0deg) scale(2.0);
+    }
+    50% { 
+      -webkit-transform: rotate(360deg) scale(2.4); 
+      -moz-transform: rotate(360deg) scale(2.4);
+    }
+    100% { 
+      -webkit-transform: rotate(720deg) scale(2.0); 
+      -moz-transform: rotate(720deg) scale(2.0);
+    }
+  }
+
+#concluido{
+
+width: 10rem;
+
+}
+
+#msgconcluido{
+
+    font-size: 35pt;
+    margin-bottom: 0.5rem;
+}
+
+#imgreload{
+
+    width: 3.5rem;
+    margin-bottom: 8rem;
 }
 
 #logo {

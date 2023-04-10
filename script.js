@@ -30,6 +30,9 @@ const canvas = document.createElement('canvas');
 const confirmarFotoBtn = document.getElementById('confirmarfoto');
 const enviarBotao = document.querySelector('#enviar');
 const camposObri = document.querySelectorAll("#nome, #sobrenome ,#birthday, #cpf, #email, #residencial, #celular, #endereco, #numero");
+const imgReload = document.getElementById('imgreload');
+const modalConcluido = document.getElementById('modalconfirmacao');
+const reloadBtn = document.getElementById('imgreload')
 const mensagensErro = {
   nome: "Por favor, insira um nome válido, contendo sempre o primeiro caracterer maiúsculo.",
   sobrenome: "Por favor, insira um sobrenome válido, contendo sempre o primeiro caracterer maiúsculo.",
@@ -165,6 +168,14 @@ function voltarLupa(buttonLupa) {
   buttonLupa.src = "./imagens/lupa-azul.png";
 }
 
+function trocarReload(imgReload) {
+  imgReload.src = "./imagens/refazer-azul.png"
+}
+
+function voltarReload(imgReload) {
+  imgReload.src = "./imagens/refazer-claro.png"
+
+}
 nascimentoInput.addEventListener('input', function() {
   let nascimento = this.value.replace(/\D/g, '');
   if (nascimento.length > 2) {
@@ -311,7 +322,7 @@ function validarCampo(campo) {
       regex = /[A-ZÀ-Ú][a-zà-ú]+.[a-z].*[A-ZÀ-Ú][a-zà-ú]+/;
       break;
     default:
-      regex = null;
+      regex = /.*/;
       break;
   }
   
@@ -472,8 +483,7 @@ title1foto.addEventListener('animationend', () => {
         msgCamera.style.display = 'none';
       });
     })
-    .catch((err) => {
-      console.log('Erro ao acessar a câmera:', err.message);
+    .catch(() => {
         msgsCamera.forEach(msgCamera => { 
         msgCamera.classList.add('show');
       })
@@ -492,6 +502,8 @@ fecharFotoBtn.addEventListener('click', () => {
   fotoContainer.style.display = 'none';
   confirmarFotoBtn.classList.remove('naoconfirmada');
   document.body.style.overflow = 'auto'
+  const stream = video.srcObject;
+  stream.getTracks()[0].stop(); // fecha a camera
   video.pause();
  });
 
@@ -531,15 +543,16 @@ confirmarFotoBtn.addEventListener('click', () => {
   if (fotoCadastro) {
     snap.classList.remove('novafoto');
     video.pause();
+    const stream = video.srcObject;
+    stream.getTracks()[0].stop(); // fecha a camera
     video.srcObject = null;
     showfotoList.forEach(showfoto => {
       showfoto.style.display = 'none';
     });
-    document.body.style.overflow = 'auto'
+    document.body.style.overflow = 'auto';
     // fecha o modal
     fotoContainer.style.display = 'none';
   } else {
-
     confirmarFotoBtn.classList.add('naoconfirmada');
   }
 });
@@ -547,6 +560,7 @@ confirmarFotoBtn.addEventListener('click', () => {
 enviarBotao.addEventListener('click', () => {
   let todosPreenchidos = true;
   let border;
+  const respostaForms = {}; // cria um objeto vazio
 
   if (window.matchMedia("(min-width: 1200px)").matches) {
     border = 0.18;
@@ -608,12 +622,39 @@ enviarBotao.addEventListener('click', () => {
     }, intervalTime);
     // Adiciona a classe 'show' à barra de progresso para exibi-la
     progressBar.classList.add('show');
-  }, 0); 
-    }
+  }, 0);
+
+    }else {
+      modalConcluido.style.display = 'flex'
+
+      // adiciona o valor do campo ao dicionário
+      respostaForms.name = document.getElementById('nome').value;
+      respostaForms.lastName = document.getElementById('sobrenome').value;
+      respostaForms.email = document.getElementById('email').value;
+      respostaForms.cellphone = document.getElementById('celular').value;
+      respostaForms.birthday = document.getElementById('birthday').value;
+      respostaForms.gender = document.getElementById('genero').value;
+      respostaForms.visit = "1";
+      respostaForms.marketingType = document.getElementById('comoconheceu').value;
+      respostaForms.rg = document.getElementById('rg').value;
+      respostaForms.cep = document.getElementById('cep').value;
+      respostaForms.endereco = document.getElementById('endereco').value;
+      respostaForms.numero = document.getElementById('numero').value;
+      respostaForms.complemento = document.getElementById('complemento').value;
+      respostaForms.residencial = document.getElementById('residencial').value;
+      respostaForms.consultor = `${consultorRespo}`;
+      respostaForms.profile = fotoCadastro;
+    } 
   });
 
   if (todosPreenchidos) {
-    // lógica para enviar o formulário
-  }
+  // lógica para enviar o formulário
+  console.log(respostaForms);
+}
 });
+
+reloadBtn.addEventListener('click', () => {
+  location.reload();
+})
+
 
