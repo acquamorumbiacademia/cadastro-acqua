@@ -567,11 +567,24 @@ position: fixed;
     display: none;
     justify-content: center;
     align-items: center;
+    animation: modalconfirmacao 1s ease-in-out forwards;
+    overflow: hidden;
+}
+
+@keyframes modalconfirmacao {
+
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
 }
 
 #loading{
 
-    animation: loader 3s ease-in-out forwards;
+    animation: loader 5s ease-in-out forwards;
     animation-delay: 0s;
     animation-fill-mode: both;
     position: absolute;
@@ -708,15 +721,15 @@ position: fixed;
     opacity: 0;
     transform: scale(0.0);
     position: absolute;
-    animation: msgconcluido 3s ease-in forwards;
-    animation-delay: 6s;
+    animation: msgconcluido 2s ease-in forwards;
+    animation-delay: 7s;
     animation-fill-mode: both;
   }
 
   @keyframes msgconcluido {
     0% {
       opacity: 0;
-      transform: scale(0);
+      transform: scale(0.5);
     }
     100% {
         opacity: 1;
@@ -728,7 +741,7 @@ position: fixed;
 
     width: 6rem;
     animation: fimconcluido 3s ease-in-out forwards;
-    animation-delay: 3s;
+    animation-delay: 5s;
     animation-fill-mode: both;
 
   }

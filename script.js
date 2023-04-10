@@ -29,7 +29,7 @@ const snap = document.getElementById('fotografar');
 const canvas = document.createElement('canvas');
 const confirmarFotoBtn = document.getElementById('confirmarfoto');
 const enviarBotao = document.querySelector('#enviar');
-const camposObri = document.querySelectorAll("#nome, #sobrenome ,#birthday, #cpf, #email, #residencial, #celular, #endereco, #numero");
+const camposObri = document.querySelectorAll("#nome, #sobrenome ,#birthday, #cpf, #email, #residencial, #celular");
 const imgReload = document.getElementById('imgreload');
 const modalConcluido = document.getElementById('modalconfirmacao');
 const reloadBtn = document.getElementById('imgreload')
@@ -75,27 +75,24 @@ botaoConsultores.addEventListener('click', () => {
   }, 500);
 });
 
-  btnFecharConsultor.addEventListener('click', () => {
-    containerConsultores.style.display = 'none'
-    document.body.style.overflow = 'auto'
-    botaoConsultores.innerText = consultorRespo
-    imgConsultores.forEach(imgConsultor => {
-      imgConsultor.classList.remove('consultorselect')
-    })
-
-  })
-
-  imgConsultores.forEach(imgConsultor => {
-    imgConsultor.addEventListener('click', event => {
-      const clicado = event.target;
+imgConsultores.forEach(imgConsultor => {
+  imgConsultor.addEventListener('click', event => {
+    const clicado = event.target;
+    if (clicado.classList.contains('consultorselect')) {
+      clicado.classList.remove('consultorselect');
+      
+    } else {
       imgConsultores.forEach(img => {
         if (img !== clicado) {
           img.classList.remove('consultorselect');
+          
         }
       });
       clicado.classList.add('consultorselect');
-    });
+    }
   });
+});
+
 
   let consultorRespo;
 
@@ -105,6 +102,25 @@ botaoConsultores.addEventListener('click', () => {
       consultorRespo = nome;
       // console.log(consultorRespo)
     });
+  });
+
+  btnFecharConsultor.addEventListener('click', () => {
+    containerConsultores.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    
+    let consultorEscolhido = false;
+    imgConsultores.forEach(imgConsultor => {
+      if (imgConsultor.classList.contains('consultorselect')) {
+        consultorEscolhido = true;
+      }
+      imgConsultor.classList.remove('consultorselect');
+    });
+  
+    if (consultorEscolhido) {
+      botaoConsultores.innerText = consultorRespo;
+    } else {
+      botaoConsultores.innerText = "Escolha seu consultor";
+    }
   });
 
   let borda;
@@ -334,6 +350,7 @@ function validarCampo(campo) {
   } else {
     campo.style.border = `${border}rem solid red`;
     campo.disabled = true;
+    campo.value = ""
 
     elementsToDisable.forEach(element => {
     element.disabled = true;
@@ -451,7 +468,6 @@ function resetProgress() {
   inputFields.forEach(inputField => {
     if (inputField && inputField.disabled) {
       inputField.style.border = `{borda}rem solid red`
-      inputField.value = ""
     }
   });
 
@@ -588,8 +604,7 @@ enviarBotao.addEventListener('click', () => {
       
       // scrollToModal()
       hidden.click()
-  
-      // Define o tempo de espera antes de começar a carregar a barra de progresso
+
     // Define o tempo de espera antes de começar a carregar a barra de progresso
     timeoutId = setTimeout(() => {
     // Seleciona a barra de progresso
@@ -626,6 +641,9 @@ enviarBotao.addEventListener('click', () => {
 
     }else {
       modalConcluido.style.display = 'flex'
+      setTimeout(() => {
+      document.body.style.overflow = 'hidden';
+      }, 500);
 
       // adiciona o valor do campo ao dicionário
       respostaForms.name = document.getElementById('nome').value;
@@ -654,7 +672,13 @@ enviarBotao.addEventListener('click', () => {
 });
 
 reloadBtn.addEventListener('click', () => {
-  location.reload();
-})
-
+  document.body.style.overflow = 'auto';
+  window.scrollTo(0, 0);
+  setTimeout(() => {
+    inputFields.forEach((inputField) => {
+    inputField.value = ""
+    modalConcluido.style.display = "none"
+    })
+  }, 500);
+});
 
